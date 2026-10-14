@@ -112,6 +112,29 @@
   html[lang="en"] [data-lang="vi"] { display: none; }
   html[lang="en"] [data-lang="en"] { display: revert; }
 
+  .download {
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    background: var(--hero); color: var(--hero-ink); border-radius: 22px; padding: 24px;
+  }
+  .download .text { flex: 1 1 260px; min-width: 0; }
+  .download h1 { margin-bottom: 8px; }
+  .download p { margin: 0 0 16px; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 20px 8px 16px;
+    border-radius: 14px; background: #16191B; color: #FFFFFF; text-decoration: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .store-btn { background: #FFFFFF; color: #16191B; }
+  }
+  .store-btn small { display: block; font-size: 12px; line-height: 1.2; opacity: .8; }
+  .store-btn b { display: block; font-size: 19px; line-height: 1.2; font-weight: 700; }
+  .qr { flex: 0 0 auto; text-align: center; }
+  .qr img {
+    display: block; width: 160px; height: 160px; padding: 10px; background: #FFFFFF;
+    border-radius: 16px; image-rendering: pixelated; box-shadow: 0 6px 16px rgba(15,42,27,.12);
+  }
+  .qr span { display: block; margin-top: 8px; font-size: 13px; opacity: .8; }
+
   @media (max-width: 520px) {
     .brand { flex-wrap: wrap; }
     .lang { margin-left: 0; }
@@ -138,6 +161,7 @@
     <nav class="tabs">
       <a href="#support"><span data-lang="vi">Hỗ trợ</span><span data-lang="en">Support</span></a>
       <a href="#privacy"><span data-lang="vi">Chính sách quyền riêng tư</span><span data-lang="en">Privacy Policy</span></a>
+      <a href="#download"><span data-lang="vi">Tải app</span><span data-lang="en">Download</span></a>
     </nav>
   </div>
 </header>
@@ -396,6 +420,32 @@
 
       <h2>8. Contact</h2>
       <p>Huy Vu — <a href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20Privacy">vudinhhuyit@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ===================== TẢI APP / DOWNLOAD ===================== -->
+  <section id="download">
+    <div class="download">
+      <div class="text">
+        <div data-lang="vi">
+          <h1>Tải Talk Wallet</h1>
+          <p>Quản lý chi tiêu bằng giọng nói. Có trên App Store cho iPhone.</p>
+        </div>
+        <div data-lang="en">
+          <h1>Get Talk Wallet</h1>
+          <p>Track your spending by voice. Available on the App Store for iPhone.</p>
+        </div>
+        <a class="store-btn" href="https://apps.apple.com/app/id6822734483" rel="noopener">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+          <span data-lang="vi"><small>Tải về trên</small><b>App Store</b></span>
+          <span data-lang="en"><small>Download on the</small><b>App Store</b></span>
+        </a>
+      </div>
+      <div class="qr">
+        <img src="qr-app-store.png" width="160" height="160" alt="Mã QR tới Talk Wallet trên App Store / QR code to Talk Wallet on the App Store">
+        <span data-lang="vi">Quét bằng camera iPhone</span>
+        <span data-lang="en">Scan with your iPhone camera</span>
+      </div>
     </div>
   </section>
 </main>
