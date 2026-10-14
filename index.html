@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talk Wallet — Hỗ trợ &amp; Quyền riêng tư</title>
+<meta name="description" content="Hỗ trợ và chính sách quyền riêng tư của Talk Wallet — quản lý chi tiêu bằng giọng nói.">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F4F1;
+    --card: #FFFFFF;
+    --border: #E4E6E2;
+    --ink: #16191B;
+    --muted: #5B6168;
+    --green: #1B7F45;
+    --green-tint: #E8F8EE;
+    --green-border: #BFE8CD;
+    --hero: #D9F5E3;
+    --hero-ink: #0F2A1B;
+    --review: #A3420F;
+    --review-tint: #FFF4EC;
+    --chip: rgba(255,255,255,.6);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101315;
+      --card: #1A1E21;
+      --border: #2A2F33;
+      --ink: #F1F3F2;
+      --muted: #A9AEB4;
+      --green: #4CC985;
+      --green-tint: #15291E;
+      --green-border: #24432F;
+      --hero: #132A1D;
+      --hero-ink: #E6F7EC;
+      --review: #F2A36F;
+      --review-tint: #2A1E16;
+      --chip: rgba(255,255,255,.08);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    overflow-wrap: break-word;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  a { color: var(--green); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+  header.hero { background: var(--hero); color: var(--hero-ink); padding: 40px 0 32px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 64px; height: 64px; border-radius: 15px; box-shadow: 0 6px 16px rgba(15,42,27,.18); }
+  .brand strong { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; display: block; line-height: 1.2; }
+  .brand span { font-size: 15px; opacity: .8; }
+  .lang { margin-left: auto; display: flex; gap: 4px; padding: 4px; background: var(--chip); border-radius: 12px; }
+  .lang button {
+    font: inherit; font-size: 14px; font-weight: 600; border: 0; border-radius: 9px;
+    padding: 6px 12px; min-height: 36px; cursor: pointer; background: transparent; color: inherit;
+  }
+  .lang button[aria-pressed="true"] { background: #FFFFFF; color: #16191B; box-shadow: 0 1px 3px rgba(22,25,27,.12); }
+  nav.tabs { display: flex; gap: 8px; margin-top: 24px; flex-wrap: wrap; }
+  nav.tabs a {
+    text-decoration: none; font-weight: 600; font-size: 15px; color: var(--hero-ink);
+    padding: 10px 16px; border-radius: 999px; background: var(--chip);
+  }
+
+  main { padding: 28px 0 56px; }
+  section { margin-bottom: 40px; scroll-margin-top: 16px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 6px; line-height: 1.2; }
+  h2 { font-size: 19px; font-weight: 700; margin: 28px 0 10px; }
+  .muted { color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; }
+  .card + .card { margin-top: 12px; }
+  .contact {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
+    background: var(--green-tint); border: 1px solid var(--green-border); border-radius: 18px; padding: 18px 20px;
+  }
+  .contact p { margin: 0; flex: 1 1 260px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px;
+    border-radius: 14px; background: var(--ink); color: var(--bg); font-weight: 600; text-decoration: none;
+  }
+  details { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 0 18px; }
+  details + details { margin-top: 10px; }
+  summary { cursor: pointer; font-weight: 600; padding: 14px 0; min-height: 44px; list-style-position: inside; }
+  details[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 10px; }
+  details > :last-child { margin-bottom: 14px; }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  code, .say {
+    font-family: inherit; font-weight: 600; background: var(--green-tint); color: var(--green);
+    padding: 1px 7px; border-radius: 6px; overflow-wrap: anywhere;
+  }
+  .note { background: var(--review-tint); color: var(--review); border-radius: 14px; padding: 12px 16px; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  .table-box { overflow-x: auto; }
+  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+
+  [data-lang]:not([data-lang="vi"]) { display: none; }
+  html[lang="en"] [data-lang="vi"] { display: none; }
+  html[lang="en"] [data-lang="en"] { display: revert; }
+
+  @media (max-width: 520px) {
+    .brand { flex-wrap: wrap; }
+    .lang { margin-left: 0; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="icon.png" alt="" width="64" height="64">
+      <div>
+        <strong>Talk Wallet</strong>
+        <span data-lang="vi">Quản lý chi tiêu bằng giọng nói</span>
+        <span data-lang="en">Track your spending by voice</span>
+      </div>
+      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set-lang="vi" aria-pressed="true">Tiếng Việt</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="#support"><span data-lang="vi">Hỗ trợ</span><span data-lang="en">Support</span></a>
+      <a href="#privacy"><span data-lang="vi">Chính sách quyền riêng tư</span><span data-lang="en">Privacy Policy</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== HỖ TRỢ / SUPPORT ===================== -->
+  <section id="support">
+    <div data-lang="vi">
+      <h1>Hỗ trợ</h1>
+      <p class="muted">Cần giúp đỡ, báo lỗi hoặc góp ý? Mình đọc mọi email và thường trả lời trong 1–2 ngày làm việc.</p>
+      <div class="contact">
+        <p>Email: <a href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20-%20H%E1%BB%97%20tr%E1%BB%A3">vudinhhuyit@gmail.com</a><br>
+        <span class="muted">Khi báo lỗi, bạn ghi giúp câu đã nói, kết quả app hiểu và phiên bản iOS.</span></p>
+        <a class="btn" href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20-%20H%E1%BB%97%20tr%E1%BB%A3">Gửi email</a>
+      </div>
+
+      <h2>Câu hỏi thường gặp</h2>
+
+      <details>
+        <summary>Ghi một giao dịch như thế nào?</summary>
+        <p>Nhấn nút micro ở giữa thanh dưới, nói một câu rồi nhấn dừng. App hiện bản xem trước gồm loại thu/chi, số tiền, danh mục và thời gian — nhấn <b>Lưu</b>, hoặc <b>Sửa</b> nếu cần chỉnh. Không tiện nói? Gõ câu vào ô “Hoặc gõ câu…”.</p>
+        <ul>
+          <li><span class="say">Ăn trưa 50k</span> → Chi 50.000 ₫, Ăn uống</li>
+          <li><span class="say">Hôm qua đổ xăng 80k</span> → Chi 80.000 ₫, Di chuyển, ngày hôm qua</li>
+          <li><span class="say">Nhận lương 20 triệu</span> → Thu 20.000.000 ₫, Lương</li>
+          <li><span class="say">ABC trả 100k</span> → Thu 100.000 ₫, đối tượng ABC</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>App hiểu những cách nói tiền nào?</summary>
+        <ul>
+          <li><code>50k</code>, <code>50 nghìn</code>, <code>50 ngàn</code>, <code>năm chục</code> (= 50.000)</li>
+          <li><code>1 triệu 2</code> (= 1.200.000), <code>2 triệu rưỡi</code> (= 2.500.000)</li>
+          <li>Tiếng lóng: <code>củ</code>, <code>chai</code> = triệu · <code>lít</code>, <code>xị</code> = 100.000</li>
+          <li>Ngoại tệ: <code>12 dollars</code>, <code>$12</code>, <code>500 euros</code> — giữ nguyên, không tự quy đổi</li>
+        </ul>
+        <p>Thời gian: <code>hôm qua</code>, <code>hôm kia</code>, <code>tối qua</code>, <code>thứ hai tuần trước</code>, <code>ngày 5</code>… Nếu câu không nhắc thời gian, app lấy đúng lúc bạn bắt đầu nói.</p>
+      </details>
+
+      <details>
+        <summary>Làm sao để app “học” cách tôi nói?</summary>
+        <p>Khi app chưa hiểu một từ (ví dụ <span class="say">Mua nhu yếu phẩm 500 cá</span>), giao dịch vẫn được lưu và đưa vào mục <b>Cần xem lại</b>. Bạn mở ra sửa một lần — số tiền thành 500.000, danh mục thành Sinh hoạt. Trước khi lưu, thẻ <b>“Talk Wallet sẽ ghi nhớ”</b> cho biết app sẽ học gì; bạn có thể tắt “Áp dụng cho lần sau” nếu không muốn.</p>
+        <p>Lần sau nói <span class="say">nhu yếu phẩm 300 cá</span>, app tự hiểu là Chi 300.000 ₫, Sinh hoạt.</p>
+      </details>
+
+      <details>
+        <summary>App học sai thì làm sao?</summary>
+        <p>Vào <b>Cài đặt › Những gì app đã học</b> để xem, xoá từng quy tắc hoặc xoá toàn bộ. Sửa ngược lại một giao dịch cũng làm quy tắc yếu đi.</p>
+      </details>
+
+      <details>
+        <summary>Mục “Cần xem lại” là gì?</summary>
+        <p>Là các giao dịch app chưa chắc chắn: đơn vị tiền lạ, chưa rõ danh mục, hoặc chưa rõ thu hay chi (ví dụ <span class="say">Chuyển ABC 200k</span>). App không đoán bừa — bạn chọn “Là khoản thu/chi” hoặc nhấn Sửa để xác nhận. Có thể tắt việc hỏi lại trong <b>Cài đặt › Hỏi lại khi không chắc</b>.</p>
+      </details>
+
+      <details>
+        <summary>Micro hoặc nhận dạng giọng nói không hoạt động</summary>
+        <ul>
+          <li>Vào <b>Cài đặt iPhone › Talk Wallet</b>, bật <b>Micro</b> và <b>Nhận dạng giọng nói</b>.</li>
+          <li>Kiểm tra <b>Cài đặt › Ngôn ngữ nhận dạng</b> trong app đúng với ngôn ngữ bạn nói.</li>
+          <li>Một số ngôn ngữ cần kết nối mạng để nhận dạng. Bạn luôn có thể gõ câu thay thế.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Sửa, xoá và khôi phục giao dịch</summary>
+        <p>Chạm vào giao dịch để sửa. Nhấn giữ để xoá, hoặc dùng nút <b>Xoá giao dịch</b> trong màn sửa — ngay sau khi xoá có nút <b>Hoàn tác</b> trong vài giây.</p>
+      </details>
+
+      <details>
+        <summary>Sao lưu, chuyển máy và xuất dữ liệu</summary>
+        <p>Dữ liệu nằm trên iPhone và đi theo bản sao lưu iCloud/Finder của máy. Bạn cũng có thể vào <b>Cài đặt › Xuất dữ liệu (CSV)</b> để mở bằng Numbers, Excel hoặc Google Sheets.</p>
+      </details>
+
+      <details>
+        <summary>Có hỗ trợ Siri và Apple Watch không?</summary>
+        <p>Đang được phát triển cho các phiên bản tiếp theo.</p>
+      </details>
+    </div>
+
+    <div data-lang="en">
+      <h1>Support</h1>
+      <p class="muted">Need help, found a bug or have feedback? Every email is read, usually answered within 1–2 business days.</p>
+      <div class="contact">
+        <p>Email: <a href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20Support">vudinhhuyit@gmail.com</a><br>
+        <span class="muted">When reporting a bug, please include what you said, what the app understood, and your iOS version.</span></p>
+        <a class="btn" href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20Support">Send email</a>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>How do I record a transaction?</summary>
+        <p>Tap the mic button in the middle of the bottom bar, say one sentence, then tap stop. You’ll see a preview with the type, amount, category and time — tap <b>Save</b>, or <b>Edit</b> to adjust it. Can’t talk? Type the sentence in the “Or type…” field.</p>
+        <ul>
+          <li><span class="say">Lunch 50k</span> → Expense ₫50,000, Food &amp; drink</li>
+          <li><span class="say">Paid 12 dollars for lunch</span> → Expense $12, Food &amp; drink</li>
+          <li><span class="say">Received 500 euros</span> → Income €500</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Which ways of saying amounts are understood?</summary>
+        <ul>
+          <li><code>50k</code>, <code>50 nghìn</code>, <code>năm chục</code> (= 50,000)</li>
+          <li><code>1 triệu 2</code> (= 1,200,000), <code>2 triệu rưỡi</code> (= 2,500,000)</li>
+          <li>Vietnamese slang: <code>củ</code>, <code>chai</code> = million · <code>lít</code>, <code>xị</code> = 100,000</li>
+          <li>Foreign currencies: <code>12 dollars</code>, <code>$12</code>, <code>500 euros</code> — kept as is, never converted</li>
+        </ul>
+        <p>Time: <code>yesterday</code>, <code>last night</code>, <code>hôm qua</code>, <code>thứ hai tuần trước</code>… If you don’t mention a time, the app uses the moment you started speaking.</p>
+      </details>
+
+      <details>
+        <summary>How does the app learn the way I talk?</summary>
+        <p>When a word isn’t understood (e.g. <span class="say">Mua nhu yếu phẩm 500 cá</span>), the transaction is still saved and placed in <b>Needs review</b>. Correct it once — amount to 500,000, category to Household. Before saving, the <b>“Talk Wallet will remember”</b> card shows what will be learned; turn off “Apply next time” if you don’t want that.</p>
+        <p>Next time, <span class="say">nhu yếu phẩm 300 cá</span> is understood as an expense of ₫300,000 in Household.</p>
+      </details>
+
+      <details>
+        <summary>The app learned something wrong</summary>
+        <p>Go to <b>Settings › What the app has learned</b> to review and delete individual rules or everything at once. Correcting a transaction back also weakens a rule.</p>
+      </details>
+
+      <details>
+        <summary>What is “Needs review”?</summary>
+        <p>Transactions the app isn’t sure about: an unknown unit, an unclear category, or unclear income vs. expense. The app never guesses blindly — pick “Income/Expense” or tap Edit to confirm. You can turn off questions in <b>Settings › Ask when unsure</b>.</p>
+      </details>
+
+      <details>
+        <summary>The microphone or speech recognition doesn’t work</summary>
+        <ul>
+          <li>Open <b>iPhone Settings › Talk Wallet</b> and allow <b>Microphone</b> and <b>Speech Recognition</b>.</li>
+          <li>Check that <b>Settings › Speech language</b> in the app matches the language you speak.</li>
+          <li>Some languages need an internet connection for recognition. You can always type instead.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Editing, deleting and restoring transactions</summary>
+        <p>Tap a transaction to edit it. Long-press to delete, or use <b>Delete transaction</b> on the edit screen — an <b>Undo</b> button appears for a few seconds right after.</p>
+      </details>
+
+      <details>
+        <summary>Backup, moving to a new iPhone and exporting</summary>
+        <p>Your data lives on your iPhone and is included in your device’s iCloud/Finder backup. You can also use <b>Settings › Export data (CSV)</b> to open it in Numbers, Excel or Google Sheets.</p>
+      </details>
+
+      <details>
+        <summary>Does it support Siri and Apple Watch?</summary>
+        <p>They’re in development for upcoming versions.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== QUYỀN RIÊNG TƯ / PRIVACY ===================== -->
+  <section id="privacy">
+    <div data-lang="vi">
+      <h1>Chính sách quyền riêng tư</h1>
+      <p class="muted">Có hiệu lực từ ngày 14/10/2026</p>
+
+      <div class="card">
+        <p style="margin:0"><b>Tóm tắt:</b> Talk Wallet không thu thập dữ liệu của bạn. Không cần tài khoản, không có máy chủ riêng, không quảng cáo, không theo dõi, không dùng công cụ phân tích của bên thứ ba. Giao dịch và những gì app học được chỉ nằm trên iPhone của bạn.</p>
+      </div>
+
+      <h2>1. Dữ liệu lưu trên thiết bị</h2>
+      <p>Để hoạt động, app lưu các dữ liệu sau <b>chỉ trên iPhone của bạn</b>, trong vùng lưu trữ riêng của app và được bảo vệ bằng mã hoá dữ liệu của iOS:</p>
+      <div class="table-box">
+        <table>
+          <tr><th>Dữ liệu</th><th>Mục đích</th></tr>
+          <tr><td>Giao dịch (số tiền, loại, danh mục, ghi chú, đối tượng, thời gian, câu nói gốc)</td><td>Hiển thị lịch sử, báo cáo, ngân sách</td></tr>
+          <tr><td>Từ điển cá nhân (đơn vị tiền, cụm từ → danh mục đã học) và lịch sử chỉnh sửa</td><td>Hiểu đúng cách bạn nói ở những lần sau</td></tr>
+          <tr><td>Ngân sách, danh mục bạn tự tạo và cài đặt (tiền tệ, ngôn ngữ nhận dạng…)</td><td>Ghi nhớ lựa chọn của bạn</td></tr>
+        </table>
+      </div>
+      <p>Nhà phát triển không có quyền truy cập vào các dữ liệu này.</p>
+
+      <h2>2. Micro và nhận dạng giọng nói</h2>
+      <ul>
+        <li>App chỉ dùng micro khi bạn nhấn nút ghi âm, và dừng ngay khi bạn nhấn dừng. App không lưu bản ghi âm.</li>
+        <li>Giọng nói được chuyển thành văn bản bằng dịch vụ nhận dạng giọng nói của Apple (Speech framework). App ưu tiên xử lý ngay trên máy; với ngôn ngữ hoặc thiết bị chưa hỗ trợ, âm thanh có thể được gửi tới Apple để nhận dạng, theo <a href="https://www.apple.com/legal/privacy/" rel="noopener">chính sách quyền riêng tư của Apple</a>.</li>
+        <li>Chỉ phần văn bản đã nhận dạng được lưu cùng giao dịch, để app học từ chỉnh sửa của bạn.</li>
+      </ul>
+
+      <h2>3. Chia sẻ dữ liệu</h2>
+      <p>Talk Wallet không bán, không chia sẻ và không gửi dữ liệu của bạn cho bất kỳ ai. Dữ liệu chỉ rời khỏi app khi chính bạn chủ động <b>Xuất dữ liệu (CSV)</b> và chọn nơi chia sẻ.</p>
+
+      <h2>4. Sao lưu</h2>
+      <p>Dữ liệu của app có thể nằm trong bản sao lưu iCloud hoặc Finder của iPhone, nếu bạn bật sao lưu. Các bản sao lưu này do Apple quản lý theo cài đặt tài khoản của bạn.</p>
+
+      <h2>5. Quyền của bạn và xoá dữ liệu</h2>
+      <ul>
+        <li><b>Xem và xuất:</b> Cài đặt › Xuất dữ liệu (CSV).</li>
+        <li><b>Xoá những gì app đã học:</b> Cài đặt › Những gì app đã học › Xoá toàn bộ.</li>
+        <li><b>Xoá toàn bộ dữ liệu:</b> Cài đặt › Xoá toàn bộ dữ liệu, hoặc gỡ app khỏi iPhone.</li>
+        <li><b>Thu hồi quyền micro/nhận dạng giọng nói:</b> Cài đặt iPhone › Talk Wallet.</li>
+      </ul>
+
+      <h2>6. Trẻ em</h2>
+      <p>App không dành riêng cho trẻ em và không cố ý thu thập thông tin của trẻ em.</p>
+
+      <h2>7. Thay đổi chính sách</h2>
+      <p>Nếu các phiên bản sau thêm tính năng mới (ví dụ đồng bộ qua iCloud, Siri, Apple Watch), chính sách này sẽ được cập nhật tại trang này, kèm ngày hiệu lực mới.</p>
+
+      <h2>8. Liên hệ</h2>
+      <p>Huy Vu — <a href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20-%20Quy%E1%BB%81n%20ri%C3%AAng%20t%C6%B0">vudinhhuyit@gmail.com</a></p>
+    </div>
+
+    <div data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="muted">Effective October 14, 2026</p>
+
+      <div class="card">
+        <p style="margin:0"><b>In short:</b> Talk Wallet does not collect your data. No account, no server of our own, no ads, no tracking, no third-party analytics. Your transactions and everything the app learns stay on your iPhone.</p>
+      </div>
+
+      <h2>1. Data stored on your device</h2>
+      <p>To work, the app stores the following <b>only on your iPhone</b>, in the app’s private storage, protected by iOS data encryption:</p>
+      <div class="table-box">
+        <table>
+          <tr><th>Data</th><th>Purpose</th></tr>
+          <tr><td>Transactions (amount, type, category, note, person, time, original phrase)</td><td>History, reports, budgets</td></tr>
+          <tr><td>Personal dictionary (learned amount units, phrase → category) and correction history</td><td>Understanding the way you speak next time</td></tr>
+          <tr><td>Budgets, categories you create and settings (currency, speech language…)</td><td>Remembering your choices</td></tr>
+        </table>
+      </div>
+      <p>The developer has no access to this data.</p>
+
+      <h2>2. Microphone and speech recognition</h2>
+      <ul>
+        <li>The microphone is used only while you are recording, and stops as soon as you tap stop. Audio recordings are not stored.</li>
+        <li>Speech is turned into text by Apple’s speech recognition service (Speech framework). On-device processing is preferred; for languages or devices that don’t support it, audio may be sent to Apple for recognition, under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</li>
+        <li>Only the recognized text is saved with the transaction, so the app can learn from your corrections.</li>
+      </ul>
+
+      <h2>3. Sharing</h2>
+      <p>Talk Wallet does not sell, share or send your data to anyone. Data leaves the app only when you choose <b>Export data (CSV)</b> and pick where to share it.</p>
+
+      <h2>4. Backups</h2>
+      <p>App data may be included in your iPhone’s iCloud or Finder backup if backups are on. Those backups are handled by Apple under your account settings.</p>
+
+      <h2>5. Your choices and deleting data</h2>
+      <ul>
+        <li><b>View and export:</b> Settings › Export data (CSV).</li>
+        <li><b>Delete what the app has learned:</b> Settings › What the app has learned › Delete everything learned.</li>
+        <li><b>Delete all data:</b> Settings › Delete all data, or delete the app.</li>
+        <li><b>Revoke microphone/speech access:</b> iPhone Settings › Talk Wallet.</li>
+      </ul>
+
+      <h2>6. Children</h2>
+      <p>The app is not directed at children and does not knowingly collect information from children.</p>
+
+      <h2>7. Changes</h2>
+      <p>If future versions add features (such as iCloud sync, Siri or Apple Watch), this policy will be updated on this page with a new effective date.</p>
+
+      <h2>8. Contact</h2>
+      <p>Huy Vu — <a href="mailto:vudinhhuyit@gmail.com?subject=Talk%20Wallet%20Privacy">vudinhhuyit@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Huy Vu · Talk Wallet</div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    function setLang(lang) {
+      root.setAttribute('lang', lang);
+      document.title = lang === 'en' ? 'Talk Wallet — Support & Privacy' : 'Talk Wallet — Hỗ trợ & Quyền riêng tư';
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)); });
+      try { localStorage.setItem('tw-lang', lang); } catch (e) {}
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.setLang); }); });
+    var saved = null;
+    try { saved = localStorage.getItem('tw-lang'); } catch (e) {}
+    var param = new URLSearchParams(location.search).get('lang');
+    var browser = (navigator.language || 'vi').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+    setLang(param === 'en' || param === 'vi' ? param : (saved || browser));
+  })();
+</script>
+</body>
+</html>
