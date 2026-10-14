@@ -217,6 +217,7 @@
       <details>
         <summary>Mục “Cần xem lại” là gì?</summary>
         <p>Là các giao dịch app chưa chắc chắn: đơn vị tiền lạ, chưa rõ danh mục, hoặc chưa rõ thu hay chi (ví dụ <span class="say">Chuyển ABC 200k</span>). App không đoán bừa — bạn chọn “Là khoản thu/chi” hoặc nhấn Sửa để xác nhận. Có thể tắt việc hỏi lại trong <b>Cài đặt › Hỏi lại khi không chắc</b>.</p>
+        <p>Với câu có <b>“chuyển”</b>, bạn chỉ cần chọn một lần: chọn “Tôi chuyển cho ABC” thì lần sau nói <span class="say">Chuyển ABC 300k</span>, app tự ghi là khoản chi, không hỏi lại. Nói <span class="say">ABC chuyển cho tôi 200k</span> thì app hiểu ngay là khoản thu. Nếu nhớ nhầm, xoá quy tắc trong <b>Cài đặt › Những gì app đã học</b>.</p>
       </details>
 
       <details>
@@ -260,6 +261,46 @@
       <details>
         <summary>Xem thống kê theo ngày, tuần, tháng, năm</summary>
         <p>Màn <b>Tổng quan</b> có bốn kỳ: <b>Ngày</b>, <b>Tuần</b> (từ thứ Hai đến Chủ nhật), <b>Tháng</b> và <b>Năm</b>; dùng mũi tên để xem kỳ trước. Chuyển giữa biểu đồ tròn (thu và chi theo danh mục) và biểu đồ cột (thu chi theo buổi, ngày, tuần hoặc tháng). Tuần hiện tại được so với cùng kỳ tuần trước.</p>
+      </details>
+
+      <details data-section="widgets">
+        <summary>Thêm widget vào màn hình chính và màn hình khoá</summary>
+        <p><b>Màn hình chính:</b> chạm giữ vào chỗ trống › <b>Sửa</b> › <b>Thêm tiện ích</b> › tìm <b>Talk Wallet</b>, chọn widget và kích thước.</p>
+        <ul>
+          <li><b>Ghi nhanh</b> (nhỏ) — nút micro lớn và tổng chi hôm nay; chạm là vào thẳng màn ghi âm.</li>
+          <li><b>Hôm nay</b> (nhỏ) — chi, thu và số giao dịch trong ngày.</li>
+          <li><b>Khoản hay dùng</b> (vừa) — 4 khoản bạn ghi lặp lại nhiều nhất, ví dụ <span class="say">Cà phê 35k</span>; chạm là ghi ngay, không cần nói, giờ giao dịch là lúc bấm.</li>
+          <li><b>Cần xem lại</b> (vừa) — giao dịch app chưa chắc; nhấn <b>Đúng</b> để xác nhận ngay (app học thêm), hoặc <b>Sửa</b> để mở màn sửa.</li>
+          <li><b>Tổng quan tuần</b> (vừa) — thu, chi, chênh lệch và cột nhỏ theo ngày, tuần bắt đầu thứ Hai.</li>
+          <li><b>Ngân sách</b> (vừa, lớn) — mức đã dùng theo danh mục: xanh dưới 90%, vàng 90–100%, đỏ khi vượt.</li>
+          <li><b>Gần đây</b> (lớn) — 5 giao dịch mới nhất, có nút <b>Hoàn tác</b> cho khoản vừa ghi (trong 10 phút).</li>
+        </ul>
+        <p><b>Màn hình khoá:</b> chạm giữ màn hình khoá › <b>Tuỳ chỉnh</b> › <b>Màn hình khoá</b> › chạm vùng widget dưới đồng hồ › <b>Talk Wallet</b>. Có <b>Ghi nhanh</b> (tròn hoặc dòng chữ trên đồng hồ), <b>Hôm nay</b> (chữ nhật: chi hôm nay và số cần xem lại) và <b>Ngân sách</b> (vòng tròn % đã dùng).</p>
+        <p><b>StandBy:</b> khi iPhone sạc và nằm ngang, vuốt sang trang widget và thêm <b>Ghi nhanh</b> hoặc <b>Hôm nay</b>.</p>
+        <p>Widget không tự thu âm được — nút micro mở app thẳng vào màn ghi. Khi máy khoá, số tiền trên widget luôn được ẩn; muốn ẩn cả khi đã mở khoá, bật <b>Cài đặt › Widget › Ẩn số tiền trên widget</b>.</p>
+      </details>
+
+      <details data-section="controls">
+        <summary>Ghi nhanh bằng Action Button và Control Center</summary>
+        <p>Talk Wallet có điều khiển <b>Ghi khoản chi</b> (iOS 18 trở lên): bấm một lần là mở thẳng màn ghi bằng giọng nói, micro tự bật.</p>
+        <ul>
+          <li><b>Action Button</b> (iPhone 15 Pro trở lên): <b>Cài đặt iPhone › Nút Tác vụ</b> › vuốt tới <b>Điều khiển</b> › chọn <b>Talk Wallet › Ghi khoản chi</b>. Đây là cách ghi nhanh nhất.</li>
+          <li><b>Control Center:</b> vuốt xuống từ góc phải trên › chạm giữ chỗ trống › <b>Thêm điều khiển</b> › <b>Talk Wallet › Ghi khoản chi</b>.</li>
+          <li><b>Màn hình khoá:</b> khi tuỳ chỉnh màn hình khoá, thay nút Đèn pin hoặc Camera ở dưới bằng <b>Ghi khoản chi</b>.</li>
+        </ul>
+      </details>
+
+      <details data-section="live-activity">
+        <summary>“Đang nghe” trên Dynamic Island</summary>
+        <p>Khi bạn ghi bằng giọng nói, Talk Wallet hiện trạng thái trên <b>Dynamic Island</b> và màn hình khoá (Live Activity). Bạn có thể vuốt về màn hình chính hay sang app khác mà vẫn thấy app đang nghe, xem kết quả và hoàn tác. Nhấn giữ Dynamic Island để mở rộng.</p>
+        <ul>
+          <li><b>Đang nghe</b> — chữ hiện dần theo lời bạn nói, kèm đồng hồ đếm. Nhấn <b>Xong</b> để phân tích ngay, <b>Huỷ</b> để bỏ.</li>
+          <li><b>Đang hiểu</b> — app đang tách số tiền, danh mục và thời gian.</li>
+          <li><b>Đã lưu</b> — xem số tiền và danh mục; nhấn <b>Hoàn tác</b> hoặc <b>Sửa</b>. Tự đóng sau khoảng 8 giây.</li>
+          <li><b>Hỏi lại</b> — câu chưa rõ thu hay chi (ví dụ <span class="say">Chuyển ABC 200k</span>): chọn <b>Thu</b> hoặc <b>Chi</b> ngay, không cần mở app.</li>
+          <li><b>Chưa nghe rõ</b> — thiếu số tiền hoặc ồn: nhấn <b>Nói lại</b> hoặc <b>Nhập tay</b> (mở app).</li>
+        </ul>
+        <p>Micro chỉ bật trong lúc ghi, và tắt khi bạn nhấn Xong, Huỷ hoặc im lặng vài giây. Muốn tắt Live Activity: <b>Cài đặt iPhone › Talk Wallet › Hoạt động trực tiếp</b>.</p>
       </details>
 
       <details>
@@ -314,6 +355,7 @@
       <details>
         <summary>What is “Needs review”?</summary>
         <p>Transactions the app isn’t sure about: an unknown unit, an unclear category, or unclear income vs. expense. The app never guesses blindly — pick “Income/Expense” or tap Edit to confirm. You can turn off questions in <b>Settings › Ask when unsure</b>.</p>
+        <p>For sentences with <b>“chuyển”</b> (transfer), you only need to answer once: choose “I sent it to ABC” and next time <span class="say">Chuyển ABC 300k</span> is logged as an expense without asking. <span class="say">ABC chuyển cho tôi 200k</span> (“ABC sent me 200k”) is understood as income right away. If it remembered wrongly, delete the rule in <b>Settings › What the app has learned</b>.</p>
       </details>
 
       <details>
@@ -358,6 +400,46 @@
         <p>The <b>Overview</b> screen has four periods: <b>Day</b>, <b>Week</b> (Monday to Sunday), <b>Month</b> and <b>Year</b>; use the arrows to see earlier periods. Switch between the pie charts (income and spending by category) and the bar chart (income vs. spending by time of day, day, week or month). The current week is compared with the same period last week.</p>
       </details>
 
+      <details data-section="widgets">
+        <summary>Adding widgets to the Home Screen and Lock Screen</summary>
+        <p><b>Home Screen:</b> touch and hold an empty area › <b>Edit</b> › <b>Add Widget</b> › find <b>Talk Wallet</b>, then pick a widget and size.</p>
+        <ul>
+          <li><b>Quick log</b> (small) — a big mic button and today’s spending; tap to go straight to voice entry.</li>
+          <li><b>Today</b> (small) — today’s spending, income and number of transactions.</li>
+          <li><b>Frequent</b> (medium) — the 4 expenses you log most, like <span class="say">Coffee 35k</span>; tap to log instantly without speaking, timed to the moment you tap.</li>
+          <li><b>Needs review</b> (medium) — transactions the app wasn’t sure about; tap <b>Correct</b> to confirm on the spot (the app learns from it) or <b>Edit</b> to open the editor.</li>
+          <li><b>Week overview</b> (medium) — income, spending, net and small daily bars; weeks start on Monday.</li>
+          <li><b>Budget</b> (medium, large) — how much of each category’s budget is used: green under 90%, yellow 90–100%, red when over.</li>
+          <li><b>Recent</b> (large) — the 5 latest transactions, with <b>Undo</b> for the one you just logged (within 10 minutes).</li>
+        </ul>
+        <p><b>Lock Screen:</b> touch and hold the Lock Screen › <b>Customize</b> › <b>Lock Screen</b> › tap the widget area below the clock › <b>Talk Wallet</b>. Choose <b>Quick log</b> (circular, or a line above the clock), <b>Today</b> (rectangular: spent today and items to review) or <b>Budget</b> (a ring showing % used).</p>
+        <p><b>StandBy:</b> while your iPhone charges on its side, swipe to the widgets page and add <b>Quick log</b> or <b>Today</b>.</p>
+        <p>Widgets can’t record audio themselves — the mic button opens the app on the recording screen. Amounts are always hidden while your iPhone is locked; to hide them when it’s unlocked too, turn on <b>Settings › Widgets › Hide amounts on widgets</b>.</p>
+      </details>
+
+      <details data-section="controls">
+        <summary>Logging with the Action Button and Control Center</summary>
+        <p>Talk Wallet has a <b>Log expense</b> control (iOS 18 and later): one press opens voice entry with the mic already on.</p>
+        <ul>
+          <li><b>Action Button</b> (iPhone 15 Pro and later): <b>iPhone Settings › Action Button</b> › swipe to <b>Controls</b> › choose <b>Talk Wallet › Log expense</b>. This is the fastest way to log.</li>
+          <li><b>Control Center:</b> swipe down from the top-right corner › touch and hold an empty area › <b>Add a Control</b> › <b>Talk Wallet › Log expense</b>.</li>
+          <li><b>Lock Screen:</b> while customizing the Lock Screen, replace the Flashlight or Camera button with <b>Log expense</b>.</li>
+        </ul>
+      </details>
+
+      <details data-section="live-activity">
+        <summary>“Listening” in the Dynamic Island</summary>
+        <p>While you log by voice, Talk Wallet shows its status in the <b>Dynamic Island</b> and on the Lock Screen (a Live Activity). You can go to the Home Screen or another app and still see that it’s listening, check the result and undo. Touch and hold the Dynamic Island to expand it.</p>
+        <ul>
+          <li><b>Listening</b> — your words appear as you speak, with a timer. Tap <b>Done</b> to analyze right away or <b>Cancel</b> to discard.</li>
+          <li><b>Understanding</b> — the app is working out the amount, category and time.</li>
+          <li><b>Saved</b> — see the amount and category; tap <b>Undo</b> or <b>Edit</b>. Closes by itself after about 8 seconds.</li>
+          <li><b>Question</b> — unclear whether it’s income or an expense (e.g. <span class="say">Chuyển ABC 200k</span>): pick <b>Income</b> or <b>Expense</b> without opening the app.</li>
+          <li><b>Didn’t catch it</b> — no amount heard or too noisy: tap <b>Say it again</b> or <b>Type it</b> (opens the app).</li>
+        </ul>
+        <p>The mic is on only while you’re logging, and turns off when you tap Done or Cancel, or after a few seconds of silence. To turn Live Activities off: <b>iPhone Settings › Talk Wallet › Live Activities</b>.</p>
+      </details>
+
       <details>
         <summary>Does it support Apple Watch?</summary>
         <p>It’s in development for upcoming versions.</p>
@@ -385,11 +467,12 @@
           <tr><td>Ngân sách, danh mục bạn tự tạo và cài đặt (tiền tệ, ngôn ngữ nhận dạng…)</td><td>Ghi nhớ lựa chọn của bạn</td></tr>
         </table>
       </div>
+      <p><b>Widget và Live Activity:</b> widget của Talk Wallet đọc cùng dữ liệu trên máy (qua vùng lưu trữ dùng chung của app) để hiện tổng chi, ngân sách và giao dịch gần đây. Số tiền trên widget và màn hình khoá được ẩn khi iPhone đang khoá; bạn có thể ẩn luôn cả khi đã mở khoá trong Cài đặt › Widget. Live Activity “Đang nghe” được cập nhật ngay trên máy, không qua máy chủ hay thông báo đẩy.</p>
       <p>Nhà phát triển không có quyền truy cập vào các dữ liệu này.</p>
 
       <h2>2. Micro và nhận dạng giọng nói</h2>
       <ul>
-        <li>App chỉ bật micro khi bạn mở màn ghi bằng giọng nói, và tắt micro khi bạn nhấn dừng hoặc sau 3 giây im lặng. App không lưu bản ghi âm.</li>
+        <li>App chỉ bật micro khi bạn mở màn ghi bằng giọng nói, và tắt micro khi bạn nhấn dừng hoặc sau 3 giây im lặng. Nếu bạn rời app trong lúc đang nói, micro vẫn nghe nốt câu đó (iOS hiện chỉ báo micro và Live Activity “Đang nghe”) rồi tự tắt. App không lưu bản ghi âm.</li>
         <li>Giọng nói được chuyển thành văn bản bằng dịch vụ nhận dạng giọng nói của Apple (Speech framework). App ưu tiên xử lý ngay trên máy; với ngôn ngữ hoặc thiết bị chưa hỗ trợ, âm thanh có thể được gửi tới Apple để nhận dạng, theo <a href="https://www.apple.com/legal/privacy/" rel="noopener">chính sách quyền riêng tư của Apple</a>.</li>
         <li>Chỉ phần văn bản đã nhận dạng được lưu cùng giao dịch, để app học từ chỉnh sửa của bạn.</li>
         <li><b>Siri:</b> khi bạn dùng câu lệnh Siri, Apple xử lý giọng nói theo chính sách của Siri; app chỉ nhận phần văn bản câu giao dịch và lưu trên máy như mọi giao dịch khác.</li>
@@ -406,7 +489,8 @@
       <ul>
         <li><b>Xem và xuất:</b> Cài đặt › Xuất dữ liệu (CSV).</li>
         <li><b>Xoá những gì app đã học:</b> Cài đặt › Những gì app đã học › Xoá toàn bộ.</li>
-        <li><b>Xoá toàn bộ dữ liệu:</b> Cài đặt › Xoá toàn bộ dữ liệu, hoặc gỡ app khỏi iPhone.</li>
+        <li><b>Xoá dữ liệu thu chi:</b> Cài đặt › Xoá dữ liệu thu chi. Những gì app đã học, danh mục và ngân sách vẫn được giữ.</li>
+        <li><b>Xoá toàn bộ dữ liệu:</b> xoá dữ liệu thu chi như trên và xoá những gì app đã học, hoặc gỡ app khỏi iPhone.</li>
         <li><b>Thu hồi quyền micro/nhận dạng giọng nói:</b> Cài đặt iPhone › Talk Wallet.</li>
       </ul>
 
@@ -438,11 +522,12 @@
           <tr><td>Budgets, categories you create and settings (currency, speech language…)</td><td>Remembering your choices</td></tr>
         </table>
       </div>
+      <p><b>Widgets and Live Activities:</b> Talk Wallet’s widgets read the same on-device data (through the app’s shared storage) to show spending, budgets and recent transactions. Amounts on widgets and the Lock Screen are hidden while your iPhone is locked; you can hide them when it’s unlocked too in Settings › Widgets. The “Listening” Live Activity is updated on your device, never through a server or push notifications.</p>
       <p>The developer has no access to this data.</p>
 
       <h2>2. Microphone and speech recognition</h2>
       <ul>
-        <li>The microphone is on only while the voice entry screen is open, and turns off when you tap stop or after 3 seconds of silence. Audio recordings are not stored.</li>
+        <li>The microphone is on only while the voice entry screen is open, and turns off when you tap stop or after 3 seconds of silence. If you leave the app mid-sentence, it keeps listening to finish that sentence (iOS shows the microphone indicator and the “Listening” Live Activity), then turns off. Audio recordings are not stored.</li>
         <li>Speech is turned into text by Apple’s speech recognition service (Speech framework). On-device processing is preferred; for languages or devices that don’t support it, audio may be sent to Apple for recognition, under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</li>
         <li>Only the recognized text is saved with the transaction, so the app can learn from your corrections.</li>
         <li><b>Siri:</b> when you use a Siri command, Apple processes your voice under Siri’s privacy terms; the app only receives the text of the transaction and stores it on your device like any other transaction.</li>
@@ -459,7 +544,8 @@
       <ul>
         <li><b>View and export:</b> Settings › Export data (CSV).</li>
         <li><b>Delete what the app has learned:</b> Settings › What the app has learned › Delete everything learned.</li>
-        <li><b>Delete all data:</b> Settings › Delete all data, or delete the app.</li>
+        <li><b>Delete income &amp; expense data:</b> Settings › Delete income &amp; expense data. What the app has learned, your categories and budgets are kept.</li>
+        <li><b>Delete all data:</b> delete income &amp; expense data as above and delete what the app has learned, or delete the app.</li>
         <li><b>Revoke microphone/speech access:</b> iPhone Settings › Talk Wallet.</li>
       </ul>
 
@@ -521,6 +607,15 @@
     var param = new URLSearchParams(location.search).get('lang');
     var browser = (navigator.language || 'vi').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
     setLang(param === 'en' || param === 'vi' ? param : (saved || browser));
+    // Link tới một câu hỏi: index.html#widgets, #controls, #live-activity.
+    function openSection() {
+      var section = location.hash.slice(1);
+      if (!section) return;
+      var target = document.querySelector('[data-lang="' + root.getAttribute('lang') + '"] [data-section="' + section + '"]');
+      if (target) { target.open = true; target.scrollIntoView(); }
+    }
+    openSection();
+    window.addEventListener('hashchange', openSection);
   })();
 </script>
 </body>
