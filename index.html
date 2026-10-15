@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Talk Wallet — Hỗ trợ &amp; Quyền riêng tư</title>
-<meta name="description" content="Hỗ trợ và chính sách quyền riêng tư của Talk Wallet — quản lý chi tiêu bằng giọng nói.">
+<title>Talk Wallet - quản lý chi tiêu bằng giọng nói</title>
+<meta name="description" content="Talk Wallet - quản lý chi tiêu bằng giọng nói">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -693,7 +693,7 @@
     var buttons = document.querySelectorAll('[data-set-lang]');
     function setLang(lang) {
       root.setAttribute('lang', lang);
-      document.title = lang === 'en' ? 'Talk Wallet — Support & Privacy' : 'Talk Wallet — Hỗ trợ & Quyền riêng tư';
+      document.title = lang === 'en' ? 'Talk Wallet - Track your spending by voice' : 'Talk Wallet - quản lý chi tiêu bằng giọng nói';
       buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)); });
       try { localStorage.setItem('tw-lang', lang); } catch (e) {}
     }
