@@ -57,17 +57,22 @@
   a { color: var(--green); }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 
-  header.hero { background: var(--hero); color: var(--hero-ink); padding: 40px 0 32px; }
+  header.hero { position: relative; background: var(--hero); color: var(--hero-ink); padding: 64px 0 32px; }
   .brand { display: flex; align-items: center; gap: 14px; }
   .brand img { width: 64px; height: 64px; border-radius: 15px; box-shadow: 0 6px 16px rgba(15,42,27,.18); }
   .brand strong { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; display: block; line-height: 1.2; }
   .brand span { font-size: 15px; opacity: .8; }
-  .lang { margin-left: auto; display: flex; gap: 4px; padding: 4px; background: var(--chip); border-radius: 12px; }
-  .lang button {
-    font: inherit; font-size: 14px; font-weight: 600; border: 0; border-radius: 9px;
-    padding: 6px 12px; min-height: 36px; cursor: pointer; background: transparent; color: inherit;
+  .lang-switch {
+    position: absolute; top: 16px; right: 16px;
+    display: inline-flex; padding: 3px; border-radius: 999px;
+    background: var(--chip);
   }
-  .lang button[aria-pressed="true"] { background: #FFFFFF; color: #16191B; box-shadow: 0 1px 3px rgba(22,25,27,.12); }
+  .lang-switch button {
+    border: 0; background: transparent; color: inherit; cursor: pointer;
+    font: 600 14px/1 inherit; font-family: inherit;
+    padding: 8px 14px; border-radius: 999px;
+  }
+  .lang-switch button[aria-pressed="true"] { background: #FFFFFF; color: #1B7F45; }
   nav.tabs { display: flex; gap: 8px; margin-top: 24px; flex-wrap: wrap; }
   nav.tabs a {
     text-decoration: none; font-weight: 600; font-size: 15px; color: var(--hero-ink);
@@ -137,7 +142,6 @@
 
   @media (max-width: 520px) {
     .brand { flex-wrap: wrap; }
-    .lang { margin-left: 0; }
     h1 { font-size: 26px; }
   }
 </style>
@@ -145,6 +149,10 @@
 <body>
 
 <header class="hero">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-set-lang="vi" aria-pressed="true">VI</button>
+  </div>
   <div class="wrap">
     <div class="brand">
       <img src="icon.png" alt="" width="64" height="64">
@@ -153,12 +161,9 @@
         <span data-lang="vi">Quản lý chi tiêu bằng giọng nói</span>
         <span data-lang="en">Track your spending by voice</span>
       </div>
-      <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
-        <button type="button" data-set-lang="vi" aria-pressed="true">Tiếng Việt</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">English</button>
-      </div>
     </div>
     <nav class="tabs">
+      <a href="#about"><span data-lang="vi">Giới thiệu</span><span data-lang="en">About</span></a>
       <a href="#support"><span data-lang="vi">Hỗ trợ</span><span data-lang="en">Support</span></a>
       <a href="#privacy"><span data-lang="vi">Chính sách quyền riêng tư</span><span data-lang="en">Privacy Policy</span></a>
       <a href="#download"><span data-lang="vi">Tải app</span><span data-lang="en">Download</span></a>
@@ -167,6 +172,97 @@
 </header>
 
 <main class="wrap">
+
+  <!-- ===================== GIỚI THIỆU / ABOUT ===================== -->
+  <section id="about">
+    <div data-lang="vi">
+      <h1>Giới thiệu</h1>
+      <p><b>Tên:</b> Talk Wallet<br>
+      <b>Phụ đề:</b> Ghi chi tiêu bằng giọng nói</p>
+      <p class="muted">Quản lý chi tiêu bằng giọng nói: nói <span class="say">Ăn trưa 50k</span> là xong. Hiểu cả tiếng lóng <span class="say">5 củ</span>, <span class="say">năm chục</span> và tự học từ mỗi lần bạn sửa — càng dùng càng hiểu bạn.</p>
+      <p>Talk Wallet giúp bạn ghi thu chi chỉ bằng một câu nói. Không cần gõ số, không cần chọn danh mục — cứ nói như bình thường, app tự hiểu.</p>
+
+      <h2>Nói là ghi</h2>
+      <ul>
+        <li><span class="say">Ăn trưa 50k</span> → Chi 50.000 ₫, danh mục Ăn uống</li>
+        <li><span class="say">Hôm qua đổ xăng 80k</span> → Chi 80.000 ₫, Di chuyển, ghi vào ngày hôm qua</li>
+        <li><span class="say">Nhận lương 20 triệu</span> → Thu 20.000.000 ₫, Lương</li>
+        <li><span class="say">ABC trả 100k</span> → Thu 100.000 ₫ từ ABC</li>
+      </ul>
+      <p>Không tiện nói? Gõ câu cũng được.</p>
+
+      <h2>Hiểu cách bạn nói về tiền</h2>
+      <ul>
+        <li>50k, 50 nghìn, 50 ngàn, năm chục</li>
+        <li>1 triệu 2, 2 triệu rưỡi, 5 củ, 3 chai, 2 lít</li>
+        <li>Hôm qua, tối qua, hôm kia, thứ hai tuần trước, ngày 5…</li>
+        <li>Thời gian giao dịch mặc định là lúc bạn bắt đầu nói</li>
+      </ul>
+
+      <h2>Càng dùng càng hiểu bạn</h2>
+      <p>Nói <span class="say">500 cá</span> mà app chưa hiểu? Sửa một lần thành 500.000 ₫ và danh mục Sinh hoạt — lần sau nói <span class="say">300 cá</span> app tự hiểu là 300.000 ₫. Bạn xem, sửa hoặc xoá mọi điều app đã học bất cứ lúc nào.</p>
+
+      <h2>Không đoán bừa</h2>
+      <p>Khi câu nói chưa rõ — như <span class="say">Chuyển ABC 200k</span> là thu hay chi — Talk Wallet hỏi lại thay vì đoán. Giao dịch chưa chắc chắn được đưa vào mục <b>Cần xem lại</b> để bạn kiểm tra sau.</p>
+
+      <h2>Biết tiền đi đâu</h2>
+      <ul>
+        <li>Tổng quan theo ngày, 7 ngày, tháng, năm</li>
+        <li>Biểu đồ tròn theo danh mục, biểu đồ cột thu chi</li>
+        <li>Ngân sách tháng cho từng danh mục, cảnh báo khi vượt mức</li>
+        <li>Tìm kiếm, lọc, sửa và xoá giao dịch (có hoàn tác)</li>
+      </ul>
+
+      <h2>Riêng tư</h2>
+      <p>Giao dịch và những gì app học được chỉ lưu trên iPhone của bạn — không tài khoản, không máy chủ. Xuất dữ liệu ra CSV hoặc xoá toàn bộ chỉ với một chạm.</p>
+
+      <p class="muted">Hỗ trợ VND, USD, EUR. Giao diện tiếng Việt và tiếng Anh.</p>
+    </div>
+
+    <div data-lang="en">
+      <h1>About</h1>
+      <p><b>Name:</b> Talk Wallet<br>
+      <b>Subtitle:</b> Track spending by voice</p>
+      <p class="muted">Track spending by voice: say <span class="say">Lunch 50k</span> and you’re done. Understands Vietnamese money slang like <span class="say">5 củ</span> or <span class="say">năm chục</span> and learns from every fix you make.</p>
+      <p>Talk Wallet lets you log income and expenses with a single sentence. No typing numbers, no picking categories — just talk the way you normally do and the app figures it out.</p>
+
+      <h2>Say it, it’s logged</h2>
+      <ul>
+        <li><span class="say">Lunch 50k</span> → Expense 50,000 ₫, Food &amp; drink</li>
+        <li><span class="say">Gas yesterday 80k</span> → Expense 80,000 ₫, Transport, logged on yesterday’s date</li>
+        <li><span class="say">Got paid 20 million</span> → Income 20,000,000 ₫, Salary</li>
+        <li><span class="say">ABC paid me 100k</span> → Income 100,000 ₫ from ABC</li>
+      </ul>
+      <p>Can’t talk right now? Type the sentence instead.</p>
+
+      <h2>Understands how you talk about money</h2>
+      <ul>
+        <li>50k, 50 nghìn, 50 ngàn, năm chục</li>
+        <li>1 triệu 2, 2 triệu rưỡi, 5 củ, 3 chai, 2 lít</li>
+        <li>Hôm qua, tối qua, hôm kia, thứ hai tuần trước, ngày 5…</li>
+        <li>The transaction time defaults to the moment you started speaking</li>
+      </ul>
+
+      <h2>Gets to know you</h2>
+      <p>Said <span class="say">500 cá</span> and the app didn’t get it? Correct it once to 500,000 ₫ in Household — next time you say <span class="say">300 cá</span>, the app knows it means 300,000 ₫. You can view, edit or delete everything the app has learned at any time.</p>
+
+      <h2>No blind guesses</h2>
+      <p>When a sentence is unclear — like <span class="say">Chuyển ABC 200k</span>, income or expense? — Talk Wallet asks instead of guessing. Uncertain transactions go into <b>Needs review</b> so you can check them later.</p>
+
+      <h2>Know where your money goes</h2>
+      <ul>
+        <li>Overview by day, 7 days, month and year</li>
+        <li>Category pie chart and income vs. expense bar chart</li>
+        <li>Monthly budgets per category, with alerts when you go over</li>
+        <li>Search, filter, edit and delete transactions (with undo)</li>
+      </ul>
+
+      <h2>Private</h2>
+      <p>Your transactions and everything the app learns stay only on your iPhone — no account, no server. Export your data to CSV or erase everything with one tap.</p>
+
+      <p class="muted">Supports VND, USD and EUR. Available in Vietnamese and English.</p>
+    </div>
+  </section>
 
   <!-- ===================== HỖ TRỢ / SUPPORT ===================== -->
   <section id="support">
