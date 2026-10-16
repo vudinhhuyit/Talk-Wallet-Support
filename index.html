@@ -211,6 +211,7 @@
         <li>Biểu đồ tròn theo danh mục, biểu đồ cột thu chi</li>
         <li>Ngân sách tháng cho từng danh mục, cảnh báo khi vượt mức</li>
         <li>Xuất file Excel theo tháng: giao dịch, danh mục, ngân sách và bảng tổng hợp</li>
+        <li>Nhập giao dịch từ file Excel hoặc CSV: sổ cũ, sao kê hay file đã xuất, xem trước và duyệt trước khi lưu</li>
         <li>Tìm kiếm, lọc, sửa và xoá giao dịch (có hoàn tác)</li>
       </ul>
 
@@ -256,6 +257,7 @@
         <li>Category pie chart and income vs. expense bar chart</li>
         <li>Monthly budgets per category, with alerts when you go over</li>
         <li>Monthly Excel export: transactions, categories, budgets and a summary</li>
+        <li>Import transactions from Excel or CSV — an old ledger, a bank statement or an exported file — with a preview and review before saving</li>
         <li>Search, filter, edit and delete transactions (with undo)</li>
       </ul>
 
@@ -335,6 +337,20 @@
       <details>
         <summary>Sao lưu, chuyển máy và xuất dữ liệu</summary>
         <p>Dữ liệu nằm trên iPhone và đi theo bản sao lưu iCloud/Finder của máy. Bạn cũng có thể xuất sổ thu chi của từng tháng ra file Excel: vào <b>Cài đặt › Xuất dữ liệu (Excel)</b>, chọn tháng rồi bấm <b>Xuất file Excel</b>, hoặc ở màn <b>Tổng quan</b> chọn <b>Tháng</b> và bấm <b>Xuất Excel</b>. File gồm giao dịch, danh mục, ngân sách và bảng tổng hợp tháng, mở được bằng Excel, Numbers hoặc Google Sheets.</p>
+        <p>Chuyển máy mà không có bản sao lưu? Nhập lại các file đã xuất trên máy mới (xem <b>Nhập giao dịch từ Excel hoặc CSV</b>). Đối tượng và câu nói gốc không được nhập lại.</p>
+      </details>
+
+      <details data-section="import">
+        <summary>Nhập giao dịch từ Excel hoặc CSV</summary>
+        <p>Bấm nút <b>Nhập</b> ở màn <b>Tổng quan</b> hoặc tab <b>Giao dịch</b>, hoặc vào <b>Cài đặt › Nhập dữ liệu (Excel, CSV)</b>.</p>
+        <ul>
+          <li>Dùng <b>file mẫu</b> (bấm <b>Tải file mẫu</b>) hoặc file bạn đã <b>xuất theo tháng</b> từ Talk Wallet. Hỗ trợ .xlsx và .csv (UTF-8).</li>
+          <li>Ba cột bắt buộc: <b>Thời gian</b> (<code>dd/mm/yyyy hh:mm</code> hoặc chỉ ngày — giờ mặc định 12:00), <b>Số tiền</b> (số dương: <code>50000</code>, <code>50.000</code> hoặc <code>50,000</code>), <b>Loại</b> (Thu hoặc Chi). Không bắt buộc: <b>Nội dung</b>, <b>Danh mục</b>, <b>Tiền tệ</b> (trống → VND).</li>
+          <li>Danh mục để trống thì app đoán từ Nội dung, ví dụ “Cà phê sữa đá” → Ăn uống. Tên không khớp danh mục nào → Khác.</li>
+          <li>Màn <b>Xem trước</b> cho biết số dòng hợp lệ và lý do từng dòng bị bỏ qua, ví dụ “Dòng 7: thiếu số tiền”. Dòng trống hoàn toàn được bỏ qua mà không báo.</li>
+          <li>Ở màn <b>Duyệt giao dịch</b>, bỏ chọn dòng không muốn nhập, chạm một dòng để sửa, rồi bấm <b>Duyệt</b>. Bấm <b>Huỷ</b> thì không lưu gì.</li>
+        </ul>
+        <p>App không kiểm tra trùng — nhập cùng một file hai lần sẽ có giao dịch bị trùng. Dữ liệu nhập không vào mục Cần xem lại và không dùng để app học. File chỉ được đọc trên iPhone, không gửi đi đâu.</p>
       </details>
 
       <details>
@@ -473,6 +489,20 @@
       <details>
         <summary>Backup, moving to a new iPhone and exporting</summary>
         <p>Your data lives on your iPhone and is included in your device’s iCloud/Finder backup. You can also export any month to an Excel file: go to <b>Settings › Export data (Excel)</b>, pick a month and tap <b>Export Excel file</b>, or on <b>Overview</b> choose <b>Month</b> and tap <b>Export to Excel</b>. The file includes transactions, categories, budgets and a monthly summary, and opens in Excel, Numbers or Google Sheets.</p>
+        <p>Moving to a new iPhone without a backup? Import your exported files on the new phone (see <b>Importing transactions from Excel or CSV</b>). The person and original phrase aren’t imported.</p>
+      </details>
+
+      <details data-section="import">
+        <summary>Importing transactions from Excel or CSV</summary>
+        <p>Tap <b>Import</b> on the <b>Overview</b> screen or the <b>Transactions</b> tab, or go to <b>Settings › Import data (Excel, CSV)</b>.</p>
+        <ul>
+          <li>Use the <b>template</b> (tap <b>Download template</b>) or a <b>monthly file</b> you exported from Talk Wallet. Both .xlsx and .csv (UTF-8) work.</li>
+          <li>Three required columns: <b>Thời gian</b> (time: <code>dd/mm/yyyy hh:mm</code> or a date only — time defaults to 12:00), <b>Số tiền</b> (amount: a positive number such as <code>50000</code>, <code>50.000</code> or <code>50,000</code>) and <b>Loại</b> (type: Thu for income, Chi for expense). Optional: <b>Nội dung</b> (note), <b>Danh mục</b> (category) and <b>Tiền tệ</b> (currency, empty → VND). Column headers stay in Vietnamese, as in the template.</li>
+          <li>If the category is empty, the app guesses it from the note — “Cà phê sữa đá” (iced coffee) → Food &amp; drink. Names that match no category become Other.</li>
+          <li>The <b>Preview</b> screen shows how many rows are valid and why each skipped row was skipped, e.g. “Row 7: missing amount”. Completely empty rows are ignored silently.</li>
+          <li>On <b>Review transactions</b>, deselect rows you don’t want, tap a row to edit it, then tap <b>Approve</b>. <b>Cancel</b> saves nothing.</li>
+        </ul>
+        <p>Duplicates aren’t checked — importing the same file twice gives duplicate transactions. Imported data doesn’t go to Needs review and isn’t used for learning. The file is read on your iPhone only and never sent anywhere.</p>
       </details>
 
       <details>
@@ -549,7 +579,7 @@
   <section id="privacy">
     <div data-lang="vi">
       <h1>Chính sách quyền riêng tư</h1>
-      <p class="muted">Cập nhật ngày 16/10/2026</p>
+      <p class="muted">Cập nhật ngày 17/10/2026</p>
 
       <div class="card">
         <p style="margin:0"><b>Tóm tắt:</b> Giao dịch và những gì app học được chỉ nằm trên iPhone của bạn — không cần tài khoản, không gửi lên máy chủ. App không theo dõi bạn qua các app và website khác và không bán dữ liệu.</p>
@@ -581,7 +611,7 @@
       <p><b>Quảng cáo không cá nhân hoá:</b> app không xin quyền theo dõi (App Tracking Transparency) và không dùng mã quảng cáo (IDFA).</p>
 
       <h2>4. Chia sẻ dữ liệu</h2>
-      <p>Talk Wallet không bán dữ liệu của bạn. Dữ liệu thu chi không được gửi cho ai — nó chỉ rời khỏi app khi chính bạn chủ động <b>xuất file Excel</b> và chọn nơi chia sẻ.</p>
+      <p>Talk Wallet không bán dữ liệu của bạn. Dữ liệu thu chi không được gửi cho ai — nó chỉ rời khỏi app khi chính bạn chủ động <b>xuất file Excel</b> và chọn nơi chia sẻ. File Excel/CSV bạn chọn để <b>nhập</b> chỉ được đọc trên iPhone, không gửi đi đâu.</p>
 
       <h2>5. Sao lưu</h2>
       <p>Dữ liệu của app có thể nằm trong bản sao lưu iCloud hoặc Finder của iPhone, nếu bạn bật sao lưu. Các bản sao lưu này do Apple quản lý theo cài đặt tài khoản của bạn.</p>
@@ -607,7 +637,7 @@
 
     <div data-lang="en">
       <h1>Privacy Policy</h1>
-      <p class="muted">Updated October 16, 2026</p>
+      <p class="muted">Updated October 17, 2026</p>
 
       <div class="card">
         <p style="margin:0"><b>In short:</b> Your transactions and everything the app learns stay on your iPhone — no account, nothing sent to a server. The app does not track you across other apps and websites and does not sell data.</p>
@@ -639,7 +669,7 @@
       <p><b>Non-personalized ads:</b> the app does not ask for tracking permission (App Tracking Transparency) and does not use the advertising identifier (IDFA).</p>
 
       <h2>4. Sharing</h2>
-      <p>Talk Wallet does not sell your data. Your income and expense data is not sent to anyone — it leaves the app only when you choose to <b>export an Excel file</b> and pick where to share it.</p>
+      <p>Talk Wallet does not sell your data. Your income and expense data is not sent to anyone — it leaves the app only when you choose to <b>export an Excel file</b> and pick where to share it. Excel/CSV files you choose to <b>import</b> are read on your iPhone only and never sent anywhere.</p>
 
       <h2>5. Backups</h2>
       <p>App data may be included in your iPhone’s iCloud or Finder backup if backups are on. Those backups are handled by Apple under your account settings.</p>
