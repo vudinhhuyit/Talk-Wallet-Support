@@ -286,10 +286,10 @@
         <summary>Ghi một giao dịch như thế nào?</summary>
         <p>Nhấn nút micro ở giữa thanh dưới, hoặc nói với Siri <span class="say">Ví nói</span> — mic bật ngay, bạn chỉ cần nói. Im lặng 3 giây là app tự dừng, tắt mic và phân tích. Nếu câu đã rõ số tiền, thu hay chi và danh mục, app <b>tự lưu</b> và hiện thẻ “Đã lưu” (có nút <b>Hoàn tác</b> và <b>Sửa</b>); nếu chưa chắc, app hiện bản xem trước hoặc hỏi lại. Không tiện nói? Gõ câu vào ô “Hoặc gõ câu…”.</p>
         <ul>
-          <li><span class="say">Ăn trưa 50k</span> → Chi 50.000 ₫, Ăn uống</li>
-          <li><span class="say">Hôm qua đổ xăng 80k</span> → Chi 80.000 ₫, Di chuyển, ngày hôm qua</li>
-          <li><span class="say">Nhận lương 20 triệu</span> → Thu 20.000.000 ₫, Lương</li>
-          <li><span class="say">ABC trả 100k</span> → Thu 100.000 ₫, đối tượng ABC</li>
+          <li><span class="say">Ăn trưa 50k</span> → Chi 50.000 VND, Ăn uống</li>
+          <li><span class="say">Hôm qua đổ xăng 80k</span> → Chi 80.000 VND, Di chuyển, ngày hôm qua</li>
+          <li><span class="say">Nhận lương 20 triệu</span> → Thu 20.000.000 VND, Lương</li>
+          <li><span class="say">ABC trả 100k</span> → Thu 100.000 VND, đối tượng ABC</li>
         </ul>
       </details>
 
@@ -301,26 +301,26 @@
           <li>Tiếng lóng: <code>củ</code>, <code>chai</code> = triệu · <code>lít</code>, <code>xị</code> = 100.000</li>
           <li>Ngoại tệ: <code>12 dollars</code>, <code>$12</code>, <code>500 euros</code> — giữ nguyên, không tự quy đổi</li>
         </ul>
-        <p>Thời gian: <code>hôm qua</code>, <code>hôm kia</code>, <code>tối qua</code>, <code>thứ hai tuần trước</code>, <code>ngày 5</code>… Nếu câu không nhắc thời gian, app lấy đúng lúc bạn bắt đầu nói.</p>
+        <p>Thời gian: <code>hôm qua</code>, <code>hôm kia</code>, <code>tối qua</code>, <code>thứ hai tuần trước</code>, <code>ngày 5</code>, <code>5/10</code>, <code>lúc 8 giờ</code>, <code>8h30</code>, <code>8 giờ tối</code>… Nếu câu không nhắc thời gian, app lấy đúng lúc bạn bắt đầu nói. Số trong cụm thời gian (<code>tháng 10</code>, <code>6 tháng</code>, <code>2 tiếng</code>) không bao giờ bị hiểu là số tiền.</p>
       </details>
 
       <details>
         <summary>Làm sao để app “học” cách tôi nói?</summary>
         <p>Khi app chưa hiểu một từ (ví dụ <span class="say">Mua nhu yếu phẩm 500 cá</span>), giao dịch vẫn được lưu và đưa vào mục <b>Cần xem lại</b>. Bạn mở ra sửa một lần — số tiền thành 500.000, danh mục thành Sinh hoạt. Trước khi lưu, thẻ <b>“Talk Wallet sẽ ghi nhớ”</b> cho biết app sẽ học gì; bạn có thể tắt “Áp dụng cho lần sau” nếu không muốn.</p>
-        <p>Lần sau nói <span class="say">nhu yếu phẩm 300 cá</span>, app tự hiểu là Chi 300.000 ₫, Sinh hoạt.</p>
+        <p>Lần sau nói <span class="say">nhu yếu phẩm 300 cá</span>, app tự hiểu là Chi 300.000 VND, Sinh hoạt.</p>
       </details>
 
       <details>
         <summary>Mục “Cần xem lại” là gì?</summary>
-        <p>Là các giao dịch app chưa chắc chắn: đơn vị tiền lạ, chưa rõ danh mục, hoặc chưa rõ thu hay chi (ví dụ <span class="say">Chuyển ABC 200k</span>). App không đoán bừa — bạn chọn “Là khoản thu/chi” hoặc nhấn Sửa để xác nhận. Có thể tắt việc hỏi lại trong <b>Cài đặt › Hỏi lại khi không chắc</b>.</p>
-        <p>Với câu có <b>“chuyển”</b>, bạn chỉ cần chọn một lần: chọn “Tôi chuyển cho ABC” thì lần sau nói <span class="say">Chuyển ABC 300k</span>, app tự ghi là khoản chi, không hỏi lại. Nói <span class="say">ABC chuyển cho tôi 200k</span> thì app hiểu ngay là khoản thu.</p>
+        <p>Là các giao dịch app chưa chắc chắn: đơn vị tiền lạ hoặc chưa rõ danh mục. App không đoán bừa — bạn nhấn Sửa để xác nhận. Có thể tắt việc hỏi lại trong <b>Cài đặt › Hỏi lại khi không chắc</b>.</p>
+        <p>Thu hay chi tuỳ vào ai đứng trước động từ: <span class="say">Chuyển ABC 300k</span>, <span class="say">Tôi trả ABC 100k</span>, <span class="say">Lì xì 200k</span> là khoản chi; <span class="say">ABC chuyển 300k</span>, <span class="say">Mẹ cho 500k</span> là khoản thu. Với <b>vay, mượn, ứng lương</b> thì ngược lại: <span class="say">Vay 5 triệu</span> là thu, <span class="say">ABC mượn 500k</span> là chi. Nếu app hiểu sai với một người, sửa một lần là app nhớ cho lần sau.</p>
       </details>
 
       <details>
         <summary>Micro hoặc nhận dạng giọng nói không hoạt động</summary>
         <ul>
           <li>Vào <b>Cài đặt iPhone › Talk Wallet</b>, bật <b>Micro</b> và <b>Nhận dạng giọng nói</b>.</li>
-          <li>Kiểm tra <b>Cài đặt › Ngôn ngữ nhận dạng</b> trong app đúng với ngôn ngữ bạn nói.</li>
+          <li>Kiểm tra <b>Cài đặt › Ngôn ngữ đọc ghi</b> trong app đúng với ngôn ngữ bạn nói.</li>
           <li>Một số ngôn ngữ cần kết nối mạng để nhận dạng. Bạn luôn có thể gõ câu thay thế.</li>
         </ul>
       </details>
@@ -332,7 +332,7 @@
 
       <details>
         <summary>Sao lưu, chuyển máy và xuất dữ liệu</summary>
-        <p>Dữ liệu nằm trên iPhone và đi theo bản sao lưu iCloud/Finder của máy. Bạn cũng có thể xuất sổ thu chi của từng tháng ra file Excel: vào <b>Cài đặt › Xuất dữ liệu (Excel)</b>, chọn tháng rồi bấm <b>Xuất file Excel</b>, hoặc ở màn <b>Tổng quan</b> chọn <b>Tháng</b> và bấm <b>Xuất Excel</b>. File gồm giao dịch, danh mục, ngân sách và bảng tổng hợp tháng, mở được bằng Excel, Numbers hoặc Google Sheets.</p>
+        <p>Dữ liệu nằm trên iPhone và đi theo bản sao lưu iCloud/Finder của máy. Bạn cũng có thể xuất sổ thu chi của từng tháng ra file Excel: vào <b>Cài đặt › Xuất dữ liệu (Excel)</b>, chọn tháng rồi bấm <b>Xuất file Excel</b>, hoặc ở màn <b>Tổng quan</b> chọn <b>Tháng</b> và bấm <b>Xuất Excel</b> (nút chỉ hiện khi tháng có giao dịch). File gồm giao dịch, danh mục, ngân sách và bảng tổng hợp tháng, mở được bằng Excel, Numbers hoặc Google Sheets.</p>
         <p>Chuyển máy mà không có bản sao lưu? Nhập lại các file đã xuất trên máy mới (xem <b>Nhập giao dịch từ Excel hoặc CSV</b>). Đối tượng và câu nói gốc không được nhập lại.</p>
       </details>
 
@@ -369,8 +369,8 @@
       </details>
 
       <details>
-        <summary>Xem thống kê theo ngày, tuần, tháng, năm</summary>
-        <p>Màn <b>Tổng quan</b> có bốn kỳ: <b>Ngày</b>, <b>Tuần</b> (từ thứ Hai đến Chủ nhật), <b>Tháng</b> và <b>Năm</b>; dùng mũi tên để xem kỳ trước. Chuyển giữa biểu đồ tròn (thu và chi theo danh mục) và biểu đồ cột (thu chi theo buổi, ngày, tuần hoặc tháng). Tuần hiện tại được so với cùng kỳ tuần trước.</p>
+        <summary>Xem thống kê theo tháng và năm</summary>
+        <p>Màn <b>Tổng quan</b> có hai kỳ: <b>Tháng</b> và <b>Năm</b>. Kỳ <b>Tháng</b> có lịch cuộn ngang từ tháng 1 năm trước đến tháng hiện tại: vuốt hoặc dùng mũi tên để đổi tháng, chạm một ngày để xem thu chi của ngày đó, chạm tiêu đề tháng để chọn tháng và năm. Kỳ <b>Năm</b> có nút chọn năm nay hoặc năm trước. Danh mục thu và chi hiện 3 dòng, chạm <b>Xem thêm</b> / <b>Thu gọn</b> để mở rộng hoặc thu lại. Chuyển giữa biểu đồ tròn (thu và chi theo danh mục) và biểu đồ cột (thu chi theo tuần hoặc tháng).</p>
       </details>
 
       <details data-section="widgets">
@@ -379,15 +379,15 @@
         <ul>
           <li><b>Ghi nhanh</b> (nhỏ) — nút micro lớn và tổng chi hôm nay; chạm là vào thẳng màn ghi âm.</li>
           <li><b>Hôm nay</b> (nhỏ) — chi, thu và số giao dịch trong ngày.</li>
-          <li><b>Khoản hay dùng</b> (vừa) — 4 khoản bạn ghi lặp lại nhiều nhất, ví dụ <span class="say">Cà phê 35k</span>; chạm là ghi ngay, không cần nói, giờ giao dịch là lúc bấm.</li>
-          <li><b>Cần xem lại</b> (vừa) — giao dịch app chưa chắc; nhấn <b>Đúng</b> để xác nhận ngay (app học thêm), hoặc <b>Sửa</b> để mở màn sửa.</li>
+          <li><b>Hỏi FinCo</b> (nhỏ, vừa) — lối vào nhanh chat FinCo: cỡ nhỏ mở chat với micro bật sẵn; cỡ vừa có thêm 3 câu gợi ý, chạm câu nào là FinCo nhận và trả lời câu đó.</li>
+          <li><b>FinCo Insight</b> (vừa) — một nhận xét nổi bật về chi tiêu tuần này, ví dụ <span class="say">Ăn uống tuần này +32%</span>; chạm <b>Phân tích tuần này</b> để FinCo phân tích ngay.</li>
           <li><b>Tổng quan tuần</b> (vừa) — thu, chi, chênh lệch và cột nhỏ theo ngày, tuần bắt đầu thứ Hai.</li>
           <li><b>Ngân sách</b> (vừa, lớn) — mức đã dùng theo danh mục: xanh dưới 90%, vàng 90–100%, đỏ khi vượt.</li>
           <li><b>Gần đây</b> (lớn) — 5 giao dịch mới nhất, có nút <b>Hoàn tác</b> cho khoản vừa ghi (trong 10 phút).</li>
         </ul>
-        <p><b>Màn hình khoá:</b> chạm giữ màn hình khoá › <b>Tuỳ chỉnh</b> › <b>Màn hình khoá</b> › chạm vùng widget dưới đồng hồ › <b>Talk Wallet</b>. Có <b>Ghi nhanh</b> (tròn hoặc dòng chữ trên đồng hồ), <b>Hôm nay</b> (chữ nhật: chi hôm nay và số cần xem lại) và <b>Ngân sách</b> (vòng tròn % đã dùng).</p>
+        <p><b>Màn hình khoá:</b> chạm giữ màn hình khoá › <b>Tuỳ chỉnh</b> › <b>Màn hình khoá</b> › chạm vùng widget dưới đồng hồ › <b>Talk Wallet</b>. Có <b>Ghi nhanh</b> (tròn hoặc dòng chữ trên đồng hồ), <b>Hôm nay</b> (chữ nhật: chi hôm nay và số cần xem lại), <b>Ngân sách</b> (vòng tròn % đã dùng) và <b>FinCo</b> (chữ nhật: tóm tắt chi tiêu; tròn: mở chat FinCo). Trên iOS 18, bạn cũng thêm được nút <b>Hỏi FinCo</b> vào Trung tâm điều khiển hoặc Nút Tác vụ.</p>
         <p><b>StandBy:</b> khi iPhone sạc và nằm ngang, vuốt sang trang widget và thêm <b>Ghi nhanh</b> hoặc <b>Hôm nay</b>.</p>
-        <p>Widget không tự thu âm được — nút micro mở app thẳng vào màn ghi. Khi máy khoá, số tiền trên widget luôn được ẩn; muốn ẩn cả khi đã mở khoá, bật <b>Cài đặt › Widget › Ẩn số tiền trên widget</b>.</p>
+        <p>Widget không tự thu âm được — nút micro mở app thẳng vào màn ghi (hoặc chat FinCo với micro bật sẵn). Khi máy khoá, số tiền trên widget luôn được ẩn; muốn ẩn cả khi đã mở khoá, bật <b>Cài đặt › Widget › Ẩn số tiền trên widget</b>.</p>
       </details>
 
       <details data-section="controls">
@@ -407,7 +407,7 @@
           <li><b>Đang nghe</b> — chữ hiện dần theo lời bạn nói, kèm đồng hồ đếm. Nhấn <b>Xong</b> để phân tích ngay, <b>Huỷ</b> để bỏ.</li>
           <li><b>Đang hiểu</b> — app đang tách số tiền, danh mục và thời gian.</li>
           <li><b>Đã lưu</b> — xem số tiền và danh mục; nhấn <b>Hoàn tác</b> hoặc <b>Sửa</b>. Tự đóng sau khoảng 8 giây.</li>
-          <li><b>Hỏi lại</b> — câu chưa rõ thu hay chi (ví dụ <span class="say">Chuyển ABC 200k</span>): chọn <b>Thu</b> hoặc <b>Chi</b> ngay, không cần mở app.</li>
+          <li><b>Cần xác nhận</b> — app chưa chắc một chi tiết (ví dụ ngày giao dịch xa bất thường): chạm để mở app và xác nhận.</li>
           <li><b>Chưa nghe rõ</b> — thiếu số tiền hoặc ồn: nhấn <b>Nói lại</b> hoặc <b>Nhập tay</b> (mở app).</li>
         </ul>
         <p>Micro chỉ bật trong lúc ghi, và tắt khi bạn nhấn Xong, Huỷ hoặc im lặng vài giây. Muốn tắt Live Activity: <b>Cài đặt iPhone › Talk Wallet › Hoạt động trực tiếp</b>.</p>
@@ -417,13 +417,13 @@
         <summary>FinCo — trợ lý tài chính</summary>
         <p>Bấm nút FinCo (mặt robot xanh) ở góc phải dưới màn hình để mở chat. Bạn có thể <b>gõ</b> câu hỏi, bấm <b>micro</b> và nói — chữ hiện dần theo lời bạn, bấm <b>✓</b> hoặc im lặng một chút là gửi — hoặc chạm một <b>tin nhắn gợi ý</b>.</p>
         <ul>
-          <li><b>Hỏi đáp</b> — về chi tiêu, tiết kiệm, ngân sách, nợ, đầu tư cơ bản và cách dùng Talk Wallet. FinCo trả lời bằng ngôn ngữ của app. Muốn bản có cấu trúc, hãy nhờ “trả lời dạng Markdown” rồi bấm <b>Tải xuống (.md)</b> để lưu.</li>
-          <li><b>Phân tích chi tiêu</b> — chọn <b>Tuần này</b> (thứ Hai đến Chủ nhật), <b>Tháng hiện tại</b> hoặc <b>Năm hiện tại</b>: FinCo đọc thu chi của kỳ đó, so với kỳ trước và đưa ra nhận xét, gợi ý.</li>
-          <li><b>FinCo cần thêm dữ liệu</b> — khi câu hỏi cần số liệu của bạn, FinCo hỏi trước; chỉ khi bạn bấm <b>Đồng ý</b>, app mới gửi thu chi của khoảng thời gian đó.</li>
+          <li><b>Hỏi đáp</b> — về chi tiêu, tiết kiệm, ngân sách, nợ, đầu tư cơ bản và cách dùng Talk Wallet. FinCo trả lời bằng ngôn ngữ của app. Muốn bản có cấu trúc, hãy nhờ “trả lời dạng Markdown” rồi bấm <b>Tải xuống (.md)</b> để lưu. Dưới mỗi câu trả lời có nút <b>sao chép</b> để chép nội dung.</li>
+          <li><b>Phân tích chi tiêu</b> — chọn <b>Tuần này</b> (thứ Hai đến Chủ nhật), <b>Tháng hiện tại</b>, <b>3 tháng</b>, <b>6 tháng</b> hoặc <b>Năm hiện tại</b>: FinCo đọc thu chi của kỳ đó, so với kỳ trước và đưa ra nhận xét, gợi ý. Mỗi kỳ có số lượt miễn phí riêng (biểu tượng thông tin trong bảng chọn kỳ cho biết); kỳ đã hết lượt thì chạm kỳ để xem quảng cáo rồi phân tích. Mặc định kỳ 6 tháng và Năm chỉ có trên Premium. Kỳ không có giao dịch thì FinCo báo ngay và không tốn lượt.</li>
+          <li><b>FinCo cần thêm dữ liệu</b> — khi câu hỏi cần số liệu của bạn, FinCo hỏi trước; chỉ khi bạn bấm <b>Đồng ý</b>, app mới gửi thu chi của khoảng thời gian đó. Dữ liệu 6 tháng và 12 tháng chỉ có trên Premium.</li>
           <li><b>FinCo hỏi lại</b> — đôi khi FinCo đưa vài câu hỏi trắc nghiệm để hiểu mục tiêu của bạn; chọn đáp án rồi bấm <b>Trả lời</b>.</li>
-          <li><b>Hướng dẫn FinCo</b> (biểu tượng cuốn sách) — cách dùng FinCo và số lượt miễn phí bạn còn. Tuỳ phiên bản, <b>Chọn nhanh</b> còn có Ghi giao dịch, Nhập và Xuất dữ liệu.</li>
+          <li><b>FinCo và lượt miễn phí</b> (biểu tượng cuốn sách) — cách dùng FinCo và số lượt miễn phí bạn còn. Tuỳ phiên bản, <b>Chọn nhanh</b> còn có Ghi giao dịch, Nhập và Xuất dữ liệu.</li>
         </ul>
-        <p>Bản miễn phí có lượt hỏi FinCo mỗi ngày, lượt <b>xử lý phức tạp</b> mỗi ngày (bấm Đồng ý gửi dữ liệu, trả lời câu hỏi của FinCo) và lượt phân tích tuần / tháng / năm. Hết lượt, bạn có thể <b>xem video quảng cáo</b> để thêm lượt — xem xong, việc bạn đang làm được tiếp tục — hoặc đăng ký <b>Premium</b> để dùng không giới hạn.</p>
+        <p>Bản miễn phí có lượt hỏi FinCo mỗi ngày, lượt <b>xử lý phức tạp</b> mỗi ngày (bấm Đồng ý gửi dữ liệu, trả lời câu hỏi của FinCo) và lượt phân tích tuần / tháng / 3 tháng / 6 tháng / năm. Hết lượt, bạn có thể <b>xem video quảng cáo</b> để thêm lượt — xem xong, việc bạn đang làm được tiếp tục — hoặc đăng ký <b>Premium</b> để dùng không giới hạn.</p>
         <p>Lịch sử chat lưu trên iPhone: Premium lưu lâu hơn, bản miễn phí lưu trong thời gian ngắn. Để trả lời, FinCo gửi tin nhắn của bạn — và dữ liệu thu chi khi bạn bấm Đồng ý hoặc dùng Phân tích — tới máy chủ của Talk Wallet và nhà cung cấp AI Anthropic; lần đầu dùng, app hỏi bạn có đồng ý không. Câu trả lời do AI tạo, có thể chưa chính xác và không phải tư vấn tài chính.</p>
       </details>
 
@@ -463,9 +463,9 @@
         <summary>How do I record a transaction?</summary>
         <p>Tap the mic button in the middle of the bottom bar, or say <span class="say">Talk Wallet</span> to Siri — the mic turns on right away, just speak. After 3 seconds of silence the app stops, turns off the mic and analyzes what you said. If the amount, income vs. expense and category are clear, it <b>saves automatically</b> and shows a “Saved” card (with <b>Undo</b> and <b>Edit</b>); otherwise you’ll see a preview or a question. Can’t talk? Type the sentence in the “Or type…” field.</p>
         <ul>
-          <li><span class="say">Lunch 50k</span> → Expense ₫50,000, Food &amp; drink</li>
-          <li><span class="say">Paid 12 dollars for lunch</span> → Expense $12, Food &amp; drink</li>
-          <li><span class="say">Received 500 euros</span> → Income €500</li>
+          <li><span class="say">Had lunch 50k</span> → Expense 50,000 VND, Food &amp; drink</li>
+          <li><span class="say">Paid 12 dollars for lunch</span> → Expense 12 USD, Food &amp; drink</li>
+          <li><span class="say">Received 500 euros</span> → Income 500 EUR</li>
         </ul>
       </details>
 
@@ -477,19 +477,19 @@
           <li>Vietnamese slang: <code>củ</code>, <code>chai</code> = million · <code>lít</code>, <code>xị</code> = 100,000</li>
           <li>Foreign currencies: <code>12 dollars</code>, <code>$12</code>, <code>500 euros</code> — kept as is, never converted</li>
         </ul>
-        <p>Time: <code>yesterday</code>, <code>last night</code>, <code>hôm qua</code>, <code>thứ hai tuần trước</code>… If you don’t mention a time, the app uses the moment you started speaking.</p>
+        <p>Time: <code>yesterday</code>, <code>last night</code>, <code>10/5</code>, <code>at 8am</code>, <code>7pm</code>, <code>20:30</code>, <code>hôm qua</code>, <code>thứ hai tuần trước</code>… If you don’t mention a time, the app uses the moment you started speaking. Numbers in time phrases (<code>October</code>, <code>6 months</code>, <code>2 hours</code>) are never read as the amount.</p>
       </details>
 
       <details>
         <summary>How does the app learn the way I talk?</summary>
         <p>When a word isn’t understood (e.g. <span class="say">Mua nhu yếu phẩm 500 cá</span>), the transaction is still saved and placed in <b>Needs review</b>. Correct it once — amount to 500,000, category to Household. Before saving, the <b>“Talk Wallet will remember”</b> card shows what will be learned; turn off “Apply next time” if you don’t want that.</p>
-        <p>Next time, <span class="say">nhu yếu phẩm 300 cá</span> is understood as an expense of ₫300,000 in Household.</p>
+        <p>Next time, <span class="say">nhu yếu phẩm 300 cá</span> is understood as an expense of 300,000 VND in Household.</p>
       </details>
 
       <details>
         <summary>What is “Needs review”?</summary>
-        <p>Transactions the app isn’t sure about: an unknown unit, an unclear category, or unclear income vs. expense. The app never guesses blindly — pick “Income/Expense” or tap Edit to confirm. You can turn off questions in <b>Settings › Ask when unsure</b>.</p>
-        <p>For sentences with <b>“chuyển”</b> (transfer), you only need to answer once: choose “I sent it to ABC” and next time <span class="say">Chuyển ABC 300k</span> is logged as an expense without asking. <span class="say">ABC chuyển cho tôi 200k</span> (“ABC sent me 200k”) is understood as income right away.</p>
+        <p>Transactions the app isn’t sure about: an unknown unit or an unclear category. The app never guesses blindly — tap Edit to confirm. You can turn off questions in <b>Settings › Ask when unsure</b>.</p>
+        <p>Income or expense depends on who comes before the verb: <span class="say">Chuyển ABC 300k</span> (“sent ABC”), <span class="say">Tôi trả ABC 100k</span> (“I paid ABC”), <span class="say">Lì xì 200k</span> (“gave lucky money”) are expenses; <span class="say">ABC chuyển 300k</span> (“ABC sent”), <span class="say">Mẹ cho 500k</span> (“Mom gave”) are income. For <b>vay, mượn, ứng lương</b> (borrow, salary advance) it’s the other way round: <span class="say">Vay 5 triệu</span> is income, <span class="say">ABC mượn 500k</span> is an expense. If the app gets it wrong for someone, correct it once and it remembers.</p>
       </details>
 
       <details>
@@ -508,7 +508,7 @@
 
       <details>
         <summary>Backup, moving to a new iPhone and exporting</summary>
-        <p>Your data lives on your iPhone and is included in your device’s iCloud/Finder backup. You can also export any month to an Excel file: go to <b>Settings › Export data (Excel)</b>, pick a month and tap <b>Export Excel file</b>, or on <b>Overview</b> choose <b>Month</b> and tap <b>Export to Excel</b>. The file includes transactions, categories, budgets and a monthly summary, and opens in Excel, Numbers or Google Sheets.</p>
+        <p>Your data lives on your iPhone and is included in your device’s iCloud/Finder backup. You can also export any month to an Excel file: go to <b>Settings › Export data (Excel)</b>, pick a month and tap <b>Export Excel file</b>, or on <b>Overview</b> choose <b>Month</b> and tap <b>Export to Excel</b> (the button only appears when the month has transactions). The file includes transactions, categories, budgets and a monthly summary, and opens in Excel, Numbers or Google Sheets.</p>
         <p>Moving to a new iPhone without a backup? Import your exported files on the new phone (see <b>Importing transactions from Excel or CSV</b>). The person and original phrase aren’t imported.</p>
       </details>
 
@@ -529,7 +529,7 @@
         <summary>How do I use Siri?</summary>
         <ul>
           <li><span class="say">Talk Wallet</span> or <span class="say">Open Talk Wallet</span> — opens the app straight on the recording screen with the mic on</li>
-          <li><span class="say">Log an expense in Talk Wallet</span> — Siri asks what to log, then say, for example, <span class="say">lunch 50k</span></li>
+          <li><span class="say">Log an expense in Talk Wallet</span> — Siri asks what to log, then say, for example, <span class="say">had lunch 50k</span></li>
           <li><span class="say">Log income in Talk Wallet</span> — log income</li>
           <li><span class="say">Undo the last transaction in Talk Wallet</span> — delete what you just logged with Siri (within 10 minutes)</li>
           <li><span class="say">Today’s spending in Talk Wallet</span> — hear today’s totals (requires unlocking)</li>
@@ -544,8 +544,8 @@
       </details>
 
       <details>
-        <summary>Stats by day, week, month and year</summary>
-        <p>The <b>Overview</b> screen has four periods: <b>Day</b>, <b>Week</b> (Monday to Sunday), <b>Month</b> and <b>Year</b>; use the arrows to see earlier periods. Switch between the pie charts (income and spending by category) and the bar chart (income vs. spending by time of day, day, week or month). The current week is compared with the same period last week.</p>
+        <summary>Stats by month and year</summary>
+        <p>The <b>Overview</b> screen has two periods: <b>Month</b> and <b>Year</b>. <b>Month</b> has a horizontally scrolling calendar from January of last year to the current month: swipe or use the arrows to change month, tap a day to see its income and expenses, and tap the month title to pick a month and year. <b>Year</b> has a button to choose this year or last year. Income and expense categories show 3 rows; tap <b>Show more</b> / <b>Show less</b> to expand or collapse. Switch between the pie charts (income and spending by category) and the bar chart (income vs. spending by week or month).</p>
       </details>
 
       <details data-section="widgets">
@@ -554,15 +554,15 @@
         <ul>
           <li><b>Quick log</b> (small) — a big mic button and today’s spending; tap to go straight to voice entry.</li>
           <li><b>Today</b> (small) — today’s spending, income and number of transactions.</li>
-          <li><b>Frequent</b> (medium) — the 4 expenses you log most, like <span class="say">Coffee 35k</span>; tap to log instantly without speaking, timed to the moment you tap.</li>
-          <li><b>Needs review</b> (medium) — transactions the app wasn’t sure about; tap <b>Correct</b> to confirm on the spot (the app learns from it) or <b>Edit</b> to open the editor.</li>
+          <li><b>Ask FinCo</b> (small, medium) — a quick way into the FinCo chat: small opens the chat with the mic already on; medium adds 3 suggested questions, and tapping one sends it to FinCo.</li>
+          <li><b>FinCo Insight</b> (medium) — one highlight about this week’s spending, like <span class="say">Dining +32% this week</span>; tap <b>Analyze this week</b> to have FinCo analyze it right away.</li>
           <li><b>Week overview</b> (medium) — income, spending, net and small daily bars; weeks start on Monday.</li>
           <li><b>Budget</b> (medium, large) — how much of each category’s budget is used: green under 90%, yellow 90–100%, red when over.</li>
           <li><b>Recent</b> (large) — the 5 latest transactions, with <b>Undo</b> for the one you just logged (within 10 minutes).</li>
         </ul>
-        <p><b>Lock Screen:</b> touch and hold the Lock Screen › <b>Customize</b> › <b>Lock Screen</b> › tap the widget area below the clock › <b>Talk Wallet</b>. Choose <b>Quick log</b> (circular, or a line above the clock), <b>Today</b> (rectangular: spent today and items to review) or <b>Budget</b> (a ring showing % used).</p>
+        <p><b>Lock Screen:</b> touch and hold the Lock Screen › <b>Customize</b> › <b>Lock Screen</b> › tap the widget area below the clock › <b>Talk Wallet</b>. Choose <b>Quick log</b> (circular, or a line above the clock), <b>Today</b> (rectangular: spent today and items to review) or <b>Budget</b> (a ring showing % used) or <b>FinCo</b> (rectangular: spending summary; circular: opens the FinCo chat). On iOS 18 you can also add an <b>Ask FinCo</b> button to Control Center or the Action button.</p>
         <p><b>StandBy:</b> while your iPhone charges on its side, swipe to the widgets page and add <b>Quick log</b> or <b>Today</b>.</p>
-        <p>Widgets can’t record audio themselves — the mic button opens the app on the recording screen. Amounts are always hidden while your iPhone is locked; to hide them when it’s unlocked too, turn on <b>Settings › Widgets › Hide amounts on widgets</b>.</p>
+        <p>Widgets can’t record audio themselves — the mic button opens the app on the recording screen (or the FinCo chat with the mic on). Amounts are always hidden while your iPhone is locked; to hide them when it’s unlocked too, turn on <b>Settings › Widgets › Hide amounts on widgets</b>.</p>
       </details>
 
       <details data-section="controls">
@@ -582,7 +582,7 @@
           <li><b>Listening</b> — your words appear as you speak, with a timer. Tap <b>Done</b> to analyze right away or <b>Cancel</b> to discard.</li>
           <li><b>Understanding</b> — the app is working out the amount, category and time.</li>
           <li><b>Saved</b> — see the amount and category; tap <b>Undo</b> or <b>Edit</b>. Closes by itself after about 8 seconds.</li>
-          <li><b>Question</b> — unclear whether it’s income or an expense (e.g. <span class="say">Chuyển ABC 200k</span>): pick <b>Income</b> or <b>Expense</b> without opening the app.</li>
+          <li><b>Needs confirming</b> — the app isn’t sure about a detail (e.g. an unusually distant date): tap to open the app and confirm.</li>
           <li><b>Didn’t catch it</b> — no amount heard or too noisy: tap <b>Say it again</b> or <b>Type it</b> (opens the app).</li>
         </ul>
         <p>The mic is on only while you’re logging, and turns off when you tap Done or Cancel, or after a few seconds of silence. To turn Live Activities off: <b>iPhone Settings › Talk Wallet › Live Activities</b>.</p>
@@ -592,13 +592,13 @@
         <summary>FinCo — your financial assistant</summary>
         <p>Tap the FinCo button (the green robot face) in the bottom-right corner to open the chat. You can <b>type</b> a question, tap the <b>mic</b> and talk — your words appear as you speak; tap <b>✓</b> or pause for a moment to send — or tap a <b>suggested message</b>.</p>
         <ul>
-          <li><b>Questions</b> — about spending, saving, budgets, debt, basic investing and using Talk Wallet. FinCo answers in the App’s language. For a structured answer, ask for “Markdown” and tap <b>Download (.md)</b> to save it.</li>
-          <li><b>Spending analysis</b> — pick <b>This week</b> (Monday to Sunday), <b>This month</b> or <b>This year</b>: FinCo reads that period’s income and expenses, compares it with the previous period and gives you insights and tips.</li>
-          <li><b>FinCo needs more data</b> — when a question needs your numbers, FinCo asks first; the App sends that period’s income and expenses only after you tap <b>Agree</b>.</li>
+          <li><b>Questions</b> — about spending, saving, budgets, debt, basic investing and using Talk Wallet. FinCo answers in the App’s language. For a structured answer, ask for “Markdown” and tap <b>Download (.md)</b> to save it. Each answer has a <b>copy</b> button under it.</li>
+          <li><b>Spending analysis</b> — pick <b>This week</b> (Monday to Sunday), <b>This month</b>, <b>3 months</b>, <b>6 months</b> or <b>This year</b>: FinCo reads that period’s income and expenses, compares it with the previous period and gives you insights and tips. Each period has its own free uses (the info icon in the period sheet shows them); when a period has none left, tap it to watch an ad and run the analysis. By default 6 months and This year are Premium only. If the period has no transactions, FinCo says so right away and no use is spent.</li>
+          <li><b>FinCo needs more data</b> — when a question needs your numbers, FinCo asks first; the App sends that period’s income and expenses only after you tap <b>Agree</b>. 6-month and 12-month data is available on Premium only.</li>
           <li><b>FinCo asks back</b> — sometimes FinCo asks a few multiple-choice questions to understand your goals; pick your answers and tap <b>Answer</b>.</li>
-          <li><b>FinCo guide</b> (the book icon) — how to use FinCo and how many free uses you have left. Depending on the version, <b>Quick actions</b> can also include Record, Import and Export.</li>
+          <li><b>FinCo and free uses</b> (the book icon) — how to use FinCo and how many free uses you have left. Depending on the version, <b>Quick actions</b> can also include Record, Import and Export.</li>
         </ul>
-        <p>The free version includes daily FinCo questions, daily <b>complex requests</b> (agreeing to share data, answering FinCo’s questions) and weekly / monthly / yearly analyses. When they run out, you can <b>watch a video ad</b> for more — afterwards, what you were doing continues — or subscribe to <b>Premium</b> for unlimited use.</p>
+        <p>The free version includes daily FinCo questions, daily <b>complex requests</b> (agreeing to share data, answering FinCo’s questions) and weekly / monthly / 3-month / 6-month / yearly analyses. When they run out, you can <b>watch a video ad</b> for more — afterwards, what you were doing continues — or subscribe to <b>Premium</b> for unlimited use.</p>
         <p>Chat history is kept on your iPhone: longer with Premium, for a short time in the free version. To answer, FinCo sends your messages — and your income and expense data when you tap Agree or use Spending analysis — to Talk Wallet’s server and to our AI provider, Anthropic; the first time, the App asks for your permission. Answers are generated by AI, may be inaccurate, and are not financial advice.</p>
       </details>
 
@@ -689,7 +689,7 @@
         <li><b>Quảng cáo cá nhân hoá</b> chỉ được dùng khi bạn chọn “Cho phép” ở hộp thoại theo dõi của iOS (App Tracking Transparency), và — nếu bạn ở EEA, Vương quốc Anh hoặc Thuỵ Sĩ — khi bạn đồng ý trong form quyền riêng tư. Khi đó đối tác có thể dùng mã quảng cáo (IDFA) và dữ liệu họ có về bạn ngoài Talk Wallet để chọn quảng cáo.</li>
         <li>Nếu bạn không cho phép, quảng cáo sẽ <b>không cá nhân hoá</b>: được chọn theo ngữ cảnh như loại ứng dụng, ngôn ngữ, vị trí gần đúng (từ địa chỉ IP). Bạn vẫn dùng đầy đủ mọi tính năng.</li>
         <li><b>Chúng tôi không bao giờ gửi dữ liệu thu chi của bạn</b> (số tiền, danh mục, nội dung, đối tượng giao dịch) cho bên quảng cáo, kể cả để nhắm mục tiêu.</li>
-        <li>Bạn có thể đổi lựa chọn bất cứ lúc nào tại <b>Cài đặt iOS › Quyền riêng tư &amp; Bảo mật › Theo dõi</b>, hoặc trong Talk Wallet tại <b>Cài đặt › Quyền riêng tư › Quyền riêng tư quảng cáo</b>.</li>
+        <li>Bạn có thể đổi lựa chọn bất cứ lúc nào tại <b>Cài đặt iOS › Quyền riêng tư &amp; Bảo mật › Theo dõi</b>, hoặc trong Talk Wallet tại <b>Cài đặt › Chung › Tuỳ chọn quyền riêng tư quảng cáo</b> (chỉ hiện ở khu vực pháp luật yêu cầu).</li>
       </ul>
       <div class="table-box">
         <table>
@@ -757,7 +757,7 @@
         <li><b>Xoá dữ liệu thu chi:</b> Cài đặt › Xoá dữ liệu thu chi.</li>
         <li><b>Xoá những gì app đã học:</b> Cài đặt › Những gì app đã học › Xoá toàn bộ.</li>
         <li><b>Tắt chia sẻ dữ liệu sử dụng:</b> Cài đặt › Quyền riêng tư › Chia sẻ dữ liệu sử dụng ẩn danh.</li>
-        <li><b>Đổi lựa chọn quảng cáo:</b> Cài đặt › Quyền riêng tư › Quyền riêng tư quảng cáo, hoặc Cài đặt iOS › Quyền riêng tư &amp; Bảo mật › Theo dõi.</li>
+        <li><b>Đổi lựa chọn quảng cáo:</b> Cài đặt › Chung › Tuỳ chọn quyền riêng tư quảng cáo (nếu có), hoặc Cài đặt iOS › Quyền riêng tư &amp; Bảo mật › Theo dõi.</li>
         <li><b>Không gửi dữ liệu cho FinCo:</b> chọn Không đồng ý ở hộp thoại lần đầu, hoặc không dùng FinCo; giao dịch chỉ được gửi khi bạn bấm Đồng ý hoặc dùng Phân tích chi tiêu.</li>
         <li><b>Thu hồi quyền micro / nhận dạng giọng nói:</b> Cài đặt iOS › Talk Wallet. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu trên máy.</li>
       </ul>
@@ -836,7 +836,7 @@
         <li><b>Personalized ads</b> are used only if you choose “Allow” in the iOS tracking prompt (App Tracking Transparency) and — if you are in the EEA, UK or Switzerland — consent in the privacy form. Partners may then use the advertising identifier (IDFA) and data they hold about you outside Talk Wallet to select ads.</li>
         <li>If you do not allow it, ads are <b>non-personalized</b>, chosen from context such as app type, language and approximate location (from IP address). Every feature still works.</li>
         <li><b>We never send your financial data</b> (amounts, categories, notes, counterparties) to advertisers, including for targeting.</li>
-        <li>You can change your choice at any time in <b>iOS Settings › Privacy &amp; Security › Tracking</b>, or in Talk Wallet under <b>Settings › Privacy › Ad privacy</b>.</li>
+        <li>You can change your choice at any time in <b>iOS Settings › Privacy &amp; Security › Tracking</b>, or in Talk Wallet under <b>Settings › General › Ad privacy options</b> (shown only where required by law).</li>
       </ul>
       <div class="table-box">
         <table>
@@ -904,7 +904,7 @@
         <li><b>Delete income &amp; expense data:</b> Settings › Delete income &amp; expense data.</li>
         <li><b>Delete what the app has learned:</b> Settings › What the app has learned › Delete everything learned.</li>
         <li><b>Turn off usage data:</b> Settings › Privacy › Share anonymous usage data.</li>
-        <li><b>Change ad choices:</b> Settings › Privacy › Ad privacy, or iOS Settings › Privacy &amp; Security › Tracking.</li>
+        <li><b>Change ad choices:</b> Settings › General › Ad privacy options (if shown), or iOS Settings › Privacy &amp; Security › Tracking.</li>
         <li><b>Keep data away from FinCo:</b> choose Don’t Allow when asked the first time, or don’t use FinCo; transactions are sent only when you tap Agree or use Spending analysis.</li>
         <li><b>Revoke microphone / speech access:</b> iOS Settings › Talk Wallet. Deleting the App removes all of its data from your iPhone.</li>
       </ul>
